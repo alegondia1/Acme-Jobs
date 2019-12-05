@@ -1,0 +1,25 @@
+
+
+auditor.job.list.label.deadline = Deadline
+auditor.job.list.label.reference = Reference number
+auditor.job.list.label.salary = Salary
+auditor.job.list.label.title = Title
+
+auditor.job.form.button.return = Return
+auditor.job.form.label.salary = Salary
+auditor.job.form.label.deadline = Deadline
+auditor.job.form.label.title = Title
+auditor.job.form.label.reference = Reference number
+auditor.job.form.label.moreInfo = More info
+auditor.job.form.label.status = ¿Published?
+
+auditor.job.form.label.employer = Employer
+auditor.job.form.button.descriptor = See the descriptor
+auditor.job.form.label.accept = I accept that my job once created cannot be deleted or modified
+auditor.job.form.label.unique = Ticker must be unique
+auditor.job.form.label.reward.error = Reward must be in EUR
+auditor.job.form.label.deadline.error = Deadline must be in future
+auditor.job.form.label.accept = Must accept the conditions
+
+auditor.job.form.button.auditorRecord = See the auditor records
+auditor.job.form.button.create = Create job

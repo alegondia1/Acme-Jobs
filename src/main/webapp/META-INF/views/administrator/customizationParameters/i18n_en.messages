@@ -1,0 +1,22 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.customization.form.label.spamWords = Spam words
+administrator.customization.form.label.spamThreshold = Spam threshold
+administrator.customization.list.label.spamWordsEN = English spam words
+administrator.customization.list.label.spamWordsES = Spanish spam words
+
+administrator.customization.list.label.emptySpamWord = Must not be blank
+administrator.customization.form.label.add = New spam word
+administrator.customization.form.button.update = Update
+administrator.customization.form.button.create = Create
+administrator.customization.form.button.delete = Delete
+
+administrator.customization.form.button.return = Return

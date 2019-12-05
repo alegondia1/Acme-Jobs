@@ -1,0 +1,32 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.label.numAnnouncement = Numero de anuncios
+administrator.dashboard.form.label.numInvestorRecord = Numero de registros de inversion
+administrator.dashboard.form.label.numCompanyRecord = Numero de registros de compañias
+administrator.dashboard.form.label.minRewardRequest = Minima recompensa por peticion
+administrator.dashboard.form.label.maxRewardRequest = Maxima recompensa por peticion
+administrator.dashboard.form.label.avgRewardRequest = Media de recompensas por peticion
+administrator.dashboard.form.label.minRewardOffer = Minima recompensa por oferta
+administrator.dashboard.form.label.maxRewardOffer = Maxima recompensa por oferta
+administrator.dashboard.form.label.avgRewardOffer = Media de recompensas por oferta
+administrator.dashboard.form.label.desvRewardOffer = Desviacion estandar de las ofertas
+administrator.dashboard.form.label.desvRewardRequest = Desviacion estandar de las peticiones
+
+administrator.dashboard.form.label.investorGroupBySector = Registros de inversion agrupados por sector
+administrator.dashboard.form.label.companyGroupBySector = Registros de compañias agrupados por sector
+
+administrator.dashboard.form.label.ratioJobGroupbyStatus = Ratio de trabajos agrupados por estado
+administrator.dashboard.form.label.ratioAppGroupbyStatus = Ratio de solicitudes agrupadas por estado
+administrator.dashboard.form.label.avgNumApplPerWorker = Media de solicitudes por trabajador
+administrator.dashboard.form.label.avgNumApplPerEmmployer = Media de solicitudes por empleado
+administrator.dashboard.form.label.avgNumJobsPerEmmployer = Media de trabajos por empleado
+
+administrator.dashboard.form.button.return = Volver

@@ -1,0 +1,31 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.challenge.form.label.title = Título:
+authenticated.challenge.form.label.deadline = Fecha límite:
+authenticated.challenge.form.label.description = Descripción:
+authenticated.challenge.form.label.goalBronze = Objetivo para bronce:
+authenticated.challenge.form.label.rewardBronze = Recompensa de bronce:
+authenticated.challenge.form.label.goalSilver = Obetivo para plata:
+authenticated.challenge.form.label.rewardSilver = Recompensa de plata:
+authenticated.challenge.form.label.goalGold = Objetivo para oro:
+authenticated.challenge.form.label.rewardGold = Recompensa de oro:
+
+
+autenticated.challenge.form.button.return = Volver
+authenticated.challenge.list.label.title = Título
+authenticated.challenge.list.label.deadline = Fecha límte
+authenticated.challenge.list.label.description = Descripción
+authenticated.challenge.list.label.goalBronze = Objetivo para bronce
+authenticated.challenge.list.label.rewardBronze = Recompensa de bronce
+authenticated.challenge.list.label.goalSilver = Obetivo para plata
+authenticated.challenge.list.label.rewardSilver = Recompensa de plata
+authenticated.challenge.list.label.goalGold = Objetivo para oro
+authenticated.challenge.list.label.rewardGold = Recompensa de oro

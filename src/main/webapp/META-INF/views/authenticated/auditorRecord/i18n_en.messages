@@ -1,0 +1,12 @@
+
+authenticated.authenticatedRecord.list.label.title = Title
+authenticated.authenticatedRecord.list.label.moment = Moment 
+authenticated.authenticatedRecord.list.label.username = Username
+	
+authenticated.authenticatedRecord.form.label.title = Title
+authenticated.authenticatedRecord.form.label.moment = Moment
+authenticated.authenticatedRecord.form.label.body = Body
+authenticated.authenticatedRecord.form.label.username = Username
+authenticated.authenticatedRecord.form.label.job = Job's title
+	
+authenticated.authenticatedRecord.form.button.return = Return

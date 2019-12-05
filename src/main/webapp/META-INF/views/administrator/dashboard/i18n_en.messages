@@ -1,0 +1,32 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.label.numAnnouncement = Number of announcement
+administrator.dashboard.form.label.numInvestorRecord = Number of investor record
+administrator.dashboard.form.label.numCompanyRecord = Number of company record
+administrator.dashboard.form.label.minRewardRequest = Minimun reward request
+administrator.dashboard.form.label.maxRewardRequest = Maximun reward request
+administrator.dashboard.form.label.avgRewardRequest = Average reward request
+administrator.dashboard.form.label.minRewardOffer = Minimun reward offer
+administrator.dashboard.form.label.maxRewardOffer = Maximun reward offer
+administrator.dashboard.form.label.avgRewardOffer = Average reward offer
+administrator.dashboard.form.label.desvRewardOffer = Standard desviation offer
+administrator.dashboard.form.label.desvRewardRequest = Standard desviation request
+
+administrator.dashboard.form.label.investorGroupBySector = Investor record group by sector
+administrator.dashboard.form.label.companyGroupBySector = Company record group by sector
+
+administrator.dashboard.form.label.ratioJobGroupbyStatus = Ratio of jobs grouped by status
+administrator.dashboard.form.label.ratioAppGroupbyStatus = Ratio of applications grouped by status
+administrator.dashboard.form.label.avgNumApplPerWorker = Average number of applications per worker
+administrator.dashboard.form.label.avgNumApplPerEmmployer = Average number of applications per employer
+administrator.dashboard.form.label.avgNumJobsPerEmmployer = Average number of jobs per employer
+
+administrator.dashboard.form.button.return = Return

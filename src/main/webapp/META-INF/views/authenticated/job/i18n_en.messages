@@ -1,0 +1,24 @@
+
+
+authenticated.job.list.label.deadline = Deadline
+authenticated.job.list.label.reference = Reference number
+authenticated.job.list.label.salary = Salary
+authenticated.job.list.label.title = Title
+
+authenticated.job.form.button.return = Return
+authenticated.job.form.label.salary = Salary
+authenticated.job.form.label.deadline = Deadline
+authenticated.job.form.label.title = Title
+authenticated.job.form.label.reference = Reference number
+authenticated.job.form.label.moreInfo = More info
+authenticated.job.form.label.status = ¿Published?
+authenticated.job.form.label.employer = Employer
+authenticated.job.form.button.auditorRecord = See the auditor records
+authenticated.job.form.label.accept = I accept that my job once created cannot be deleted or modified
+authenticated.job.form.label.unique = Ticker must be unique
+authenticated.job.form.label.reward.error = Reward must be in EUR
+authenticated.job.form.label.deadline.error = Deadline must be in future
+authenticated.job.form.label.accept = Must accept the conditions
+authenticated.job.form.button.descriptor= Descriptor Information
+
+authenticated.job.form.button.create = Create job

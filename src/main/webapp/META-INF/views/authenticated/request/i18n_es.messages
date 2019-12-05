@@ -1,0 +1,32 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.request.list.label.ticker = Pet. Nº
+authenticated.request.list.label.title = Título
+authenticated.request.list.label.moment = Momento
+authenticated.request.list.label.deadline = Fecha límite
+authenticated.request.list.label.description = Descripción
+authenticated.request.list.label.reward = Recompensa
+
+authenticated.request.form.button.return = Regresar
+authenticated.request.form.label.description = Descripción
+authenticated.request.form.label.reward = Recompensa
+authenticated.request.form.label.moment = Momento	
+authenticated.request.form.label.deadline = Fecha límite
+authenticated.request.form.label.title = Título
+authenticated.request.form.label.ticker = Pet. Nº
+
+authenticated.request.form.label.accept = Acepto que, una vez creada, mi petición no puede ser alterada ni modificada.
+authenticated.request.form.label.unique = El número de la petición ha de ser único.
+authenticated.request.form.label.reward.error = La recompensa ha de estar en euros.
+authenticated.request.form.label.deadline.error = La fecha límite ha de estar en el futuro.
+authenticated.request.form.label.accept = Debe aceptar las condiciones.
+
+authenticated.request.form.button.create = Crear petición

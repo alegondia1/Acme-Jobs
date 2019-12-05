@@ -1,0 +1,12 @@
+
+auditor.auditorRecord.list.label.title = Title
+auditor.auditorRecord.list.label.moment = Moment 
+auditor.auditorRecord.list.label.username = Username
+	
+auditor.auditorRecord.form.label.title = Title
+auditor.auditorRecord.form.label.moment = Moment
+auditor.auditorRecord.form.label.body = Body
+auditor.auditorRecord.form.label.username = Username
+auditor.auditorRecord.form.label.job = Job's title
+	
+auditor.auditorRecord.form.button.return = Return
