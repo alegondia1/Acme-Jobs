@@ -162,8 +162,16 @@
         `salary_currency` varchar(255),
         `status` bit,
         `title` varchar(255),
-        `descriptor_id` integer not null,
+        `descriptor_id` integer,
         `employer_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `justification` (
+       `id` integer not null,
+        `version` integer not null,
+        `reason` varchar(1024),
+        `application_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -256,6 +264,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `request_auditor` (
+       `id` integer not null,
+        `version` integer not null,
+        `firm` varchar(255),
+        `id_user` integer,
+        `responsibility_statement` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `sponsor` (
        `id` integer not null,
         `version` integer not null,
@@ -308,6 +325,9 @@
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
+
+    alter table `justification` 
+       add constraint UK_2ctploatlatw5btxcjwembifo unique (`application_id`);
 
     alter table `message_thread_message` 
        add constraint UK_bx8ll7j8be93gcj4mnbmvm2rk unique (`messages_id`);
@@ -400,6 +420,11 @@
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
        foreign key (`employer_id`) 
        references `employer` (`id`);
+
+    alter table `justification` 
+       add constraint `FK8ma9xucf9mh9736jhtdumt8x3` 
+       foreign key (`application_id`) 
+       references `application` (`id`);
 
     alter table `message` 
        add constraint `FKik4epe9dp5q6uenarfyia7xin` 

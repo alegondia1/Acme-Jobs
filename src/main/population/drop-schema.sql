@@ -63,6 +63,10 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
+    alter table `justification` 
+       drop 
+       foreign key `FK8ma9xucf9mh9736jhtdumt8x3`;
+
     alter table `message` 
        drop 
        foreign key `FKik4epe9dp5q6uenarfyia7xin`;
@@ -139,6 +143,8 @@
 
     drop table if exists `job`;
 
+    drop table if exists `justification`;
+
     drop table if exists `message`;
 
     drop table if exists `message_thread`;
@@ -156,6 +162,8 @@
     drop table if exists `records`;
 
     drop table if exists `request`;
+
+    drop table if exists `request_auditor`;
 
     drop table if exists `sponsor`;
 

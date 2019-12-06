@@ -41,6 +41,7 @@ master.menu.anonymous.investorRecordStars = List investor records with 5 star
 
 master.menu.employer = Employer
 master.menu.employer.job.listmine = List my jobs
+master.menu.employer.job.create = Create job
 
 # master.menu.sponsor #################################################################
 master.menu.sponsor = Sponsor
