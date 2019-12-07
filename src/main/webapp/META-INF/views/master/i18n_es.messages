@@ -47,8 +47,9 @@ master.menu.anonymous.investorRecordStars = Lista de registros de inversion con 
 
 # master.menu.employer #################################################################
 
-master.menu.employer = Empleado
+master.menu.employer = Empleador
 master.menu.employer.job.listmine = Listar mis trabajos
+master.menu.employer.job.create = Crear trabajo
 
 # master.menu.worker #################################################################
 

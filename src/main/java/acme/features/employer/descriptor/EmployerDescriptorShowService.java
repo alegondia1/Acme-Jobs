@@ -30,7 +30,7 @@ public class EmployerDescriptorShowService implements AbstractShowService<Employ
 		Employer employer;
 		Principal principal;
 
-		jobId = request.getModel().getInteger("id");
+		jobId = request.getModel().getInteger("jobid");
 		job = this.repository.findJobById(jobId);
 		employer = job.getEmployer();
 		principal = request.getPrincipal();
@@ -43,6 +43,14 @@ public class EmployerDescriptorShowService implements AbstractShowService<Employ
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		Job job;
+		int jobId;
+
+		jobId = request.getModel().getInteger("jobid");
+		job = this.repository.findJobById(jobId);
+		model.setAttribute("jobid", jobId);
+		model.setAttribute("status", job.getStatus());
+
 		request.unbind(entity, model, "description", "dutys");
 	}
 
@@ -53,7 +61,7 @@ public class EmployerDescriptorShowService implements AbstractShowService<Employ
 		Descriptor result;
 		int id;
 
-		id = request.getModel().getInteger("id");
+		id = request.getModel().getInteger("jobid");
 		result = this.repository.findOneByJobId(id);
 		result.getDutys().size();
 

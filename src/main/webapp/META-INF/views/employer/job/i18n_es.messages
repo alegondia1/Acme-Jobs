@@ -13,6 +13,11 @@ employer.job.list.label.reference = Numero de referencia
 employer.job.list.label.salary = Salario
 employer.job.list.label.title = Titulo
 
+employer.job.form.button.descriptor.create = Crear descriptor
+employer.job.form.label.nodelete = No puedes eliminarlo si ya tienes solicitudes para este trabajo
+employer.job.form.label.nodescriptor = Para estar publico debe tener un descriptor, crea uno primero
+employer.job.form.label.salary.error = Debe estar en euro
+employer.job.form.label.unique = Ya existe la referencia
 employer.job.form.button.auditorRecord = Ver los auditor record
 employer.job.form.button.return = Volver
 employer.job.form.label.salary = Salario
@@ -28,9 +33,10 @@ employer.job.form.label.unique = El ticker debe ser unico
 employer.job.form.label.reward.error = La recompensa debe estar en EUR
 employer.job.form.label.deadline.error = La fecha debe ser en futuro
 employer.job.form.label.accept = Debe aceptar las condiciones
+employer.job.form.button.create = Crear trabajo
+employer.job.form.button.delete = Eliminar
+employer.job.form.button.update = Actualizar
 
 employer.job.form.button.auditorRecord = Ver los regitros de auditor
 
 employer.job.form.button.descriptor= Informacion de Descriptor
-
-employer.job.form.button.create = Crear oferta

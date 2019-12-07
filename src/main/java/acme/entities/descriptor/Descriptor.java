@@ -11,6 +11,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import acme.entities.dutys.Duty;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -29,6 +32,7 @@ public class Descriptor extends DomainEntity {
 	//	//Relationships-----------------------------------
 	@Valid
 	@NotNull
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToMany(fetch = FetchType.EAGER)
+	@Fetch(value = FetchMode.SUBSELECT)
 	private Collection<Duty>	dutys;
 }

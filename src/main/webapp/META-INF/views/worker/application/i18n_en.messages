@@ -8,6 +8,9 @@ worker.application.form.label.skills = Skills
 worker.application.form.label.qualifications = Qualifications
 worker.application.form.label.statements = Statements
 worker.application.form.label.status = Status
+worker.application.form.label.justification.reason = Reason
+worker.application.form.label.app = Application
+worker.application.form.label.button.justification = See justification of rejection
 
 worker.application.form.label.worker = Worker
 worker.application.form.label.job = Job

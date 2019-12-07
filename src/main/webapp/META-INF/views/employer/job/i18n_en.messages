@@ -5,6 +5,11 @@ employer.job.list.label.reference = Reference number
 employer.job.list.label.salary = Salary
 employer.job.list.label.title = Title
 
+employer.job.form.button.descriptor.create = Create descriptor
+employer.job.form.label.nodelete = You can't delete if you have applications in this job
+employer.job.form.label.nodescriptor = To be public you must have a descriptor, create one first
+employer.job.form.label.salary.error = Must be in euro
+employer.job.form.label.unique = Reference already exist
 employer.job.form.button.return = Return
 employer.job.form.label.salary = Salary
 employer.job.form.label.deadline = Deadline
@@ -21,6 +26,8 @@ employer.job.form.label.reward.error = Reward must be in EUR
 employer.job.form.label.deadline.error = Deadline must be in future
 employer.job.form.label.accept = Must accept the conditions
 employer.job.form.button.descriptor= Descriptor Information
+employer.job.form.button.delete = Delete
+employer.job.form.button.update = Update
 
 employer.job.form.button.auditorRecord = See the auditor records
 employer.job.form.button.create = Create job

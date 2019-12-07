@@ -959,4 +959,13 @@
 		<property name="worker" ref="worker1Worker"/>
 		<property name="job" ref="Job05"/>
 	</bean>
+	 <!-- JUSTIFICATION -->
+	 <bean id="Justification01" class="acme.entities.justification.Justification">
+		<property name="reason" value="No me gusta esta peticion"/>
+		<property name="application" ref="Application03"/>
+	</bean>
+	<bean id="Justification02" class="acme.entities.justification.Justification">
+		<property name="reason" value="No me gusta esta peticion 2"/>
+		<property name="application" ref="Application06"/>
+	</bean>
 </beans>

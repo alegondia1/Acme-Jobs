@@ -16,6 +16,14 @@ employer.duty.form.label.percentaje = Porcentaje
 employer.duty.list.label.title = Titulo
 employer.duty.list.label.percentaje = Porcentaje
 
+employer.descriptor.form.label.percentajenumber = El porcentaje debe ser un numero
+employer.descriptor.form.label.notblank = La descripcion y el titulo no pueden estar en blanco
+employer.descriptor.adddutys = Añadir tarea
+employer.duty.list.label.description = Descripcion
+employer.descriptor.form.button.update = Actualizar
+employer.descriptor.form.button.create = Crear
+employer.descriptor.form.label.percentajemax = El porcentaje debe sumar 100
+employer.descriptor.form.label.alradyhasdescriptor = Ya tiene un descriptor
 employer.descriptor.form.button.return = Volver
 employer.descriptor.form.label.description = Descripcion
 employer.descriptor.form.button.dutys= Ver las Dutys
