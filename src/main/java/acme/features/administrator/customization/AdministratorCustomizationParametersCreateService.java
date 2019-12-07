@@ -1,8 +1,6 @@
 
 package acme.features.administrator.customization;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,10 +48,8 @@ public class AdministratorCustomizationParametersCreateService implements Abstra
 	public CustomizationParameters instantiate(final Request<CustomizationParameters> request) {
 		assert request != null;
 		CustomizationParameters result;
-		Collection<CustomizationParameters> collection;
-		collection = this.repository.findManyAll();
+		result = this.repository.find();
 
-		result = collection.stream().findFirst().get();
 		return result;
 	}
 

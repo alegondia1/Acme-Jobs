@@ -1,8 +1,6 @@
 
 package acme.features.administrator.customization;
 
-import java.util.Collection;
-
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -16,6 +14,6 @@ public interface AdministratorCustomizationParametersRepository extends Abstract
 	CustomizationParameters findOneById(int id);
 
 	@Query("select a from CustomizationParameters a")
-	Collection<CustomizationParameters> findManyAll();
+	CustomizationParameters find();
 
 }

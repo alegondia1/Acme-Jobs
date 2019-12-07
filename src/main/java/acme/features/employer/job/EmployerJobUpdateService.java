@@ -6,9 +6,11 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.customizationParameters.CustomizationParameters;
 import acme.entities.descriptor.Descriptor;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
+import acme.features.administrator.customization.AdministratorCustomizationParametersRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -19,7 +21,9 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 
 	//Internal State -----------------------------
 	@Autowired
-	EmployerJobRepository repository;
+	EmployerJobRepository							repository;
+	@Autowired
+	AdministratorCustomizationParametersRepository	spamRepository;
 
 
 	@Override
@@ -63,6 +67,21 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		errors.state(request, !references.stream().anyMatch(X -> X.getReference().equals(entity.getReference()) && !(X.getId() == entity.getId())), "reference", "employer.job.form.label.unique");
 		descriptor = this.repository.findDescriptorByJobId(id);
 		errors.state(request, descriptor != null && entity.getStatus() || !entity.getStatus(), "status", "employer.job.form.label.nodescriptor");
+		if (entity.getStatus() && descriptor != null) {
+			errors.state(request, !this.check(entity.getTitle()), "status", "employer.job.form.label.isspam");
+			errors.state(request, !this.check(entity.getDescriptor().getDescription()), "status", "employer.job.form.label.isspam");
+			errors.state(request, !entity.getDescriptor().getDutys().stream().anyMatch(X -> this.check(X.getDescription()) || this.check(X.getTitle())), "status", "employer.job.form.label.isspam");
+		}
+	}
+
+	private Boolean check(final String data) {
+		Boolean result = false;
+		CustomizationParameters customizationParameter;
+		customizationParameter = this.spamRepository.find();
+		//Double threeshold = customizationParameter.getSpamThreshold();
+		Collection<String> spamwords = customizationParameter.getSpamWords();
+		result = spamwords.stream().anyMatch(X -> data.toLowerCase().contains(X));
+		return result;
 	}
 
 	@Override

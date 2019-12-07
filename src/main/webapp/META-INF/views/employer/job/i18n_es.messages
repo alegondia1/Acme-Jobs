@@ -13,6 +13,7 @@ employer.job.list.label.reference = Numero de referencia
 employer.job.list.label.salary = Salario
 employer.job.list.label.title = Titulo
 
+employer.job.form.label.isspam = No se puede publicar, hay palabras consideradas spam en tu trabajo
 employer.job.form.button.descriptor.create = Crear descriptor
 employer.job.form.label.nodelete = No puedes eliminarlo si ya tienes solicitudes para este trabajo
 employer.job.form.label.nodescriptor = Para estar publico debe tener un descriptor, crea uno primero

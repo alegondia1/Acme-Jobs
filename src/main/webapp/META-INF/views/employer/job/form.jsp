@@ -30,6 +30,7 @@
 </jstl:if>
 <jstl:if test="${command == 'show' && status==false || command == 'create'||  command == 'delete'  && status==false || command == 'update'}">
 <acme:form>
+	<acme:form-hidden path="descriptorBoolean"/>
 	<acme:form-textbox code="employer.job.form.label.title" path="title"/>
 	<acme:form-moment code="employer.job.form.label.deadline" path="deadline"/>
 	<acme:form-money code="employer.job.form.label.salary" path="salary"/>
@@ -42,8 +43,8 @@
 	<label><acme:message code="employer.job.form.label.employer"/></label>
 	<input readonly="readonly" type="text" class="form-control" value="${employer.userAccount.username}"> 
 	</div>
-	<acme:form-submit test="${command != 'create' && command != 'delete' && descriptor == null}" code="employer.job.form.button.descriptor.create" method="get" action="/employer/descriptor/create?jobid=${id}"/>
-	<acme:form-submit test="${command != 'create' && status==true && command != 'update' || descriptor != null}" code="employer.job.form.button.descriptor" method="get" action="/employer/descriptor/show?jobid=${id}"/>
+	<acme:form-submit test="${command != 'create' && command != 'delete' && descriptor == null && descriptorBoolean==false}" code="employer.job.form.button.descriptor.create" method="get" action="/employer/descriptor/create?jobid=${id}"/>
+	<acme:form-submit test="${command != 'create' && status==true && command != 'update' || descriptor != null  || descriptorBoolean==true}" code="employer.job.form.button.descriptor" method="get" action="/employer/descriptor/show?jobid=${id}"/>
 	<acme:form-submit test="${command != 'create' && status==true && command != 'update'}" code="employer.job.form.button.auditorRecord" method="get" action="/authenticated/auditor-record/list?id=${id}"/>
 	<acme:form-submit test="${command != 'create' && status==true && command != 'update'}" code="employer.job.form.button.application" method="get" action="/employer/application/list?id=${id}"/>
 	

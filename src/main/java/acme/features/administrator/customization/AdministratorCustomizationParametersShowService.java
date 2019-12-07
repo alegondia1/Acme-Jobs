@@ -1,8 +1,6 @@
 
 package acme.features.administrator.customization;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,10 +41,7 @@ public class AdministratorCustomizationParametersShowService implements Abstract
 		assert request != null;
 
 		CustomizationParameters result;
-		Collection<CustomizationParameters> collection;
-		collection = this.repository.findManyAll();
-
-		result = collection.stream().findFirst().get();
+		result = this.repository.find();
 
 		return result;
 	}
