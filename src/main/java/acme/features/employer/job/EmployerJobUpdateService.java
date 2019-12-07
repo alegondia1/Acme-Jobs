@@ -45,7 +45,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "title", "deadline");
-		request.unbind(entity, model, "salary", "moreInfo", "status", "employer");
+		request.unbind(entity, model, "salary", "moreInfo", "status", "employer", "descriptor");
 
 	}
 
