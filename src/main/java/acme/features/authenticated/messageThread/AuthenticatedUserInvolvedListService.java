@@ -1,21 +1,23 @@
 
 package acme.features.authenticated.messageThread;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.messageThread.Message;
 import acme.entities.messageThread.MessageThread;
+import acme.entities.messageThread.UserInvolved;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
 import acme.framework.entities.Principal;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedMessageShowService implements AbstractShowService<Authenticated, Message> {
+public class AuthenticatedUserInvolvedListService implements AbstractListService<Authenticated, UserInvolved> {
 
 	//Internal State -----------------------------
 	@Autowired
@@ -23,7 +25,7 @@ public class AuthenticatedMessageShowService implements AbstractShowService<Auth
 
 
 	@Override
-	public boolean authorise(final Request<Message> request) {
+	public boolean authorise(final Request<UserInvolved> request) {
 		assert request != null;
 		boolean result;
 		int threadId;
@@ -40,28 +42,27 @@ public class AuthenticatedMessageShowService implements AbstractShowService<Auth
 	}
 
 	@Override
-	public void unbind(final Request<Message> request, final Message entity, final Model model) {
+	public void unbind(final Request<UserInvolved> request, final UserInvolved entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 		int threadId;
 		threadId = request.getModel().getInteger("threadid");
 		model.setAttribute("threadid", threadId);
-		request.unbind(entity, model, "moment", "title", "body", "tags", "user");
-
+		request.unbind(entity, model, "user.userAccount.username", "messageThread");
 	}
 
 	@Override
-	public Message findOne(final Request<Message> request) {
-		assert request != null;
+	public Collection<UserInvolved> findMany(final Request<UserInvolved> request) {
+		Collection<UserInvolved> users;
+		int threadId;
+		Principal principal;
 
-		Message result;
-		int id;
-
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneMessageById(id);
-
-		return result;
+		principal = request.getPrincipal();
+		threadId = request.getModel().getInteger("threadid");
+		users = this.repository.findUserInvolvedByThreadId(threadId);
+		users = users.stream().filter(X -> X.getUser().getId() != principal.getActiveRoleId()).collect(Collectors.toCollection(ArrayList::new));
+		return users;
 	}
 
 }

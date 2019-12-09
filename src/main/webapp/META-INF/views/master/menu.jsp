@@ -95,6 +95,7 @@
 			<acme:menu-suboption code="master.menu.user-account.request" action="/authenticated/request/list"/>
 			<acme:menu-suboption code="master.menu.user-account.job.list" action="/authenticated/job/list"/>
 			<acme:menu-suboption code="master.menu.user-account.messageThreads" action="/authenticated/message-thread/list"/>
+			<acme:menu-suboption code="master.menu.user-account.messageThreads.create" action="/authenticated/message-thread/create"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
