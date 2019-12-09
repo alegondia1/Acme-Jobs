@@ -12,15 +12,30 @@ authenticated.messageThread.list.label.moment = Fecha
 authenticated.messageThread.list.label.title = Titulo
 authenticated.message.list.label.title = Titulo
 authenticated.message.list.label.moment = Fecha
-
+authenticated.messageThread.form.button.exit = Salir del hilo
+authenticated.messageThread.form.button.create = Crear
 authenticated.messageThread.form.label.title = Titulo
 authenticated.messageThread.form.label.moment = Fecha
 authenticated.message.list = Lista de mensajes
 
+authenticated.messageThread.form.button.newmessage = Nuevo mensaje
 authenticated.message.form.label.title = Titulo
 authenticated.message.form.label.moment = Fecha
 authenticated.message.form.label.tags = Tags
+authenticated.message.form.label.checkbox = Acepto que mi mensaje una vez creado no podra ser modificado o eliminado
 authenticated.message.form.label.body = Cuerpo del mensaje
 authenticated.message.form.label.user = Usuario
+authenticated.message.form.label.accept = Debes aceptar las condiciones
+authenticated.message.form.label.isspam = El texto contiene palabras de spam
+authenticated.message.form.label.tags.create = Tags(Separalos con :)
 
 authenticated.messageThread.form.button.return = Volver
+
+authenticated.userinvolved.form.label.username = Usuario
+authenticated.userinvolved.form.label.thread = Hilo de mensajes
+authenticated.messageThread.form.button.add = Añadir usuario
+authenticated.userinvolved.form.label.error = El usuario no existe
+authenticated.messageThread.form.button.list = Listar usuarios
+authenticated.userinvolved.form.label.delete = Eliminar
+authenticated.userinvolved.form.label.duplicate = El usuario esta en el hilo
+authenticated.messageThread.form.button.eliminate = Eliminar al usuario del hilo

@@ -12,17 +12,31 @@ authenticated.messageThread.list.label.moment = Moment
 authenticated.messageThread.list.label.title = Title
 authenticated.message.list.label.title = Title
 authenticated.message.list.label.moment = Moment
-
+authenticated.messageThread.form.button.create = Create
 authenticated.messageThread.form.label.title = Title
 authenticated.messageThread.form.label.moment = Moment
+authenticated.messageThread.form.button.exit = Get out of the thread
+authenticated.messageThread.form.button.newmessage = New message
 
 
+authenticated.message.form.label.accept = You must accept the conditions
+authenticated.message.form.label.checkbox = I accept that my message once created cannot be deleted or modified
 authenticated.message.form.label.title = Title
 authenticated.message.form.label.moment = Moment
 authenticated.message.form.label.tags = Tags
 authenticated.message.form.label.body = Message body
 authenticated.message.form.label.user = User
-
+authenticated.message.form.label.tags.create = Tags(Separate them with :)
+authenticated.message.form.label.isspam = The text contains spam words
 authenticated.message.list = Message list
 
 authenticated.messageThread.form.button.return = Return
+
+authenticated.userinvolved.form.label.username = Username
+authenticated.userinvolved.form.label.thread = Message thread
+authenticated.messageThread.form.button.add = Add user
+authenticated.userinvolved.form.label.error = User does not exist
+authenticated.messageThread.form.button.list = List users
+authenticated.userinvolved.form.label.delete = Delete
+authenticated.userinvolved.form.label.duplicate = User is in the thread
+authenticated.messageThread.form.button.eliminate = Delete the user of the thread

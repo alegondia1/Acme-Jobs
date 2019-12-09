@@ -2,7 +2,9 @@
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
+<jstl:if test="${command != 'create'}">
 <acme:form>
+	<acme:form-hidden path="threadid"/>
 	<acme:form-textbox code="authenticated.message.form.label.title" path="title"/>
 	<acme:form-moment code="authenticated.message.form.label.moment" path="moment"/>
 	<acme:form-textarea code="authenticated.message.form.label.body" path="body"/>
@@ -27,3 +29,16 @@
 	
 	<acme:form-return code="authenticated.messageThread.form.button.return"/>
 </acme:form>
+</jstl:if>
+<jstl:if test="${command == 'create'}">
+<acme:form>
+	<acme:form-hidden path="threadid"/>
+	<acme:form-textbox code="authenticated.message.form.label.title" path="title"/>
+	<acme:form-textarea code="authenticated.message.form.label.body" path="body"/>
+	<acme:form-textarea code="authenticated.message.form.label.tags.create" path="tagss"/>
+	<acme:form-checkbox code="authenticated.message.form.label.checkbox" path="accept"/>
+	
+	<acme:form-submit test="${command == 'create'}" code="authenticated.messageThread.form.button.create" action="/authenticated/message/create"/>
+	<acme:form-return code="authenticated.messageThread.form.button.return"/>
+</acme:form>
+</jstl:if>

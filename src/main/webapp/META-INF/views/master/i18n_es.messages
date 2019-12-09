@@ -100,6 +100,7 @@ master.menu.consumer.offer.create = Crear oferta
 
 # master.menu.user-account ####################################################
 
+master.menu.user-account.messageThreads.create = Crear hilo de mensajes
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
 master.menu.user-account.provider = Datos de proveedor

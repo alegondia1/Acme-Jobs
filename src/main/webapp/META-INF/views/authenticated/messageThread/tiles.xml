@@ -28,4 +28,11 @@
 		<put-attribute name="body" type="template" value="../authenticated/messageThread/form-message.jsp" />
 	</definition>
 	
+	<definition name="authenticated/user-involved/form" extends="master">		
+		<put-attribute name="body" type="template" value="../authenticated/messageThread/form-user.jsp" />
+	</definition>
+	
+	<definition name="authenticated/user-involved/list" extends="master">		
+		<put-attribute name="body" type="template" value="../authenticated/messageThread/list-users.jsp" />
+	</definition>
 </tiles-definitions>

@@ -99,6 +99,7 @@ master.menu.consumer.offer.create = Create offer
 
 # master.menu.user-account ####################################################
 
+master.menu.user-account.messageThreads.create = Create message thread
 master.menu.user-account = Account
 master.menu.user-account.general-data = General data
 master.menu.user-account.provider = Provider data
