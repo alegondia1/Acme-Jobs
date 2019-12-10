@@ -1,6 +1,8 @@
 
 package acme.features.administrator.dashboard;
 
+import java.util.Date;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -64,4 +66,13 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select a.status,count(a) from Application a group by a.status")
 	Object[][] findRatioAppGroupbyStatus();
+
+	@Query("select count(a) from Application a where a.status='PENDING' and a.moment BETWEEN ?1 AND ?2")
+	Integer findPendingAppBetween(Date from, Date to);
+
+	@Query("select count(a) from Application a where a.status='ACCEPTED' and a.moment BETWEEN ?1 AND ?2")
+	Integer findAcceptedAppBetween(Date from, Date to);
+
+	@Query("select count(a) from Application a where a.status='REJECTED' and a.moment BETWEEN ?1 AND ?2")
+	Integer findRejectedAppBetween(Date from, Date to);
 }

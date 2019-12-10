@@ -185,7 +185,151 @@
 		
 
 </script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var data = {
+				labels : [
+					<jstl:forEach var="entry" items="${pendingApplicationsPerDay}">
+				  	"<jstl:out value="${entry.key}"/>",
+					</jstl:forEach>
+				],
+				datasets : [{
+						data : [
+							<jstl:forEach var="entry" items="${pendingApplicationsPerDay}">
+							  	<jstl:out value="${entry.value}"/>,
+							</jstl:forEach>
+						]
+					}]
+		};
+		var options = {
+			scales :{
+				yAxes : [
+					{
+						ticks : {
+							suggestedMin : 0.0,
+							suggestedMax : 1.0
+						}
+					}
+				]
+			},
+			legend : {
+				display : false
+			}
+		};
+		var canvas, context;
+		
+		canvas = document.getElementById("canvas5");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+					type: "line",
+					data : data,
+					options : options
+				});
+	});
+		
 
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var data = {
+				labels : [
+					<jstl:forEach var="entry" items="${acceptedApplicationsPerDay}">
+				  	"<jstl:out value="${entry.key}"/>",
+					</jstl:forEach>
+				],
+				datasets : [{
+						data : [
+							<jstl:forEach var="entry" items="${acceptedApplicationsPerDay}">
+							  	<jstl:out value="${entry.value}"/>,
+							</jstl:forEach>
+						]
+					}]
+		};
+		var options = {
+			scales :{
+				yAxes : [
+					{
+						ticks : {
+							suggestedMin : 0.0,
+							suggestedMax : 1.0
+						}
+					}
+				]
+			},
+			legend : {
+				display : false
+			}
+		};
+		var canvas, context;
+		
+		canvas = document.getElementById("canvas6");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+					type: "line",
+					data : data,
+					options : options
+				});
+	});
+		
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var data = {
+				labels : [
+					<jstl:forEach var="entry" items="${rejectedApplicationsPerDay}">
+				  	"<jstl:out value="${entry.key}"/>",
+					</jstl:forEach>
+				],
+				datasets : [{
+						data : [
+							<jstl:forEach var="entry" items="${rejectedApplicationsPerDay}">
+							  	<jstl:out value="${entry.value}"/>,
+							</jstl:forEach>
+						]
+					}]
+		};
+		var options = {
+			scales :{
+				yAxes : [
+					{
+						ticks : {
+							suggestedMin : 0.0,
+							suggestedMax : 1.0
+						}
+					}
+				]
+			},
+			legend : {
+				display : false
+			}
+		};
+		var canvas, context;
+		
+		canvas = document.getElementById("canvas7");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+					type: "line",
+					data : data,
+					options : options
+				});
+	});
+		
+
+</script>
+<h2>D05</h2>
+<div>
+	<h2><acme:message code="administrator.dashboard.form.label.pendingApplicationsPerDay"/></h2>
+	<canvas id="canvas5"></canvas>
+</div>
+<div>
+	<h2><acme:message code="administrator.dashboard.form.label.acceptedApplicationsPerDay"/></h2>
+	<canvas id="canvas6"></canvas>
+</div>
+<div>
+	<h2><acme:message code="administrator.dashboard.form.label.rejectedApplicationsPerDay"/></h2>
+	<canvas id="canvas7"></canvas>
+</div>
 <h2>D04</h2>
 <acme:form>
 	<acme:form-double code="administrator.dashboard.form.label.avgNumJobsPerEmmployer" readonly="true" path="avgNumJobsPerEmmployer"/>

@@ -39,4 +39,10 @@ public class Dashboard implements Serializable {
 
 	private Map<Boolean, Integer>	ratioJobGroupbyStatus;
 	private Map<String, Integer>	ratioAppGroupbyStatus;
+
+	//D05
+
+	private Map<String, Integer>	pendingApplicationsPerDay;
+	private Map<String, Integer>	acceptedApplicationsPerDay;
+	private Map<String, Integer>	rejectedApplicationsPerDay;
 }

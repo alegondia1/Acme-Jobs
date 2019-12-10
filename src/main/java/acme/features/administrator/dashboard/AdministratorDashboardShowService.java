@@ -1,6 +1,10 @@
 
 package acme.features.administrator.dashboard;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,7 +40,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert model != null;
 
 		request.unbind(entity, model, "numberAnnouncement", "numberCompanyRecord", "numberInvestorRecord", "minRewardRequest", "maxRewardRequest", "avgRewardRequest", "desvRewardRequest", "minRewardOffer", "maxRewardOffer", "avgRewardOffer",
-			"desvRewardOffer", "investorGroupBySector", "companyGroupBySector", "avgNumJobsPerEmmployer", "avgNumApplPerEmmployer", "avgNumApplPerWorker", "ratioJobGroupbyStatus", "ratioAppGroupbyStatus");
+			"desvRewardOffer", "investorGroupBySector", "companyGroupBySector", "avgNumJobsPerEmmployer", "avgNumApplPerEmmployer", "avgNumApplPerWorker", "ratioJobGroupbyStatus", "ratioAppGroupbyStatus", "pendingApplicationsPerDay",
+			"acceptedApplicationsPerDay", "rejectedApplicationsPerDay");
 
 	}
 
@@ -88,6 +93,29 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		}
 		result.setRatioJobGroupbyStatus(ratioJobGroupbyStatus);
 		result.setRatioAppGroupbyStatus(ratioAppGroupbyStatus);
+
+		/////////////////////D05///////////////////////////
+		Map<String, Integer> pendingApplicationsPerDay = new HashMap<String, Integer>();
+		Map<String, Integer> acceptedApplicationsPerDay = new HashMap<String, Integer>();
+		Map<String, Integer> rejectedApplicationsPerDay = new HashMap<String, Integer>();
+		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+		for (int i = 0; i < 28; i++) {
+			Date from = new Date();
+			Date to = new Date();
+			Calendar hasta = Calendar.getInstance();
+			hasta.add(Calendar.DAY_OF_YEAR, -i);
+			Calendar desde = Calendar.getInstance();
+			desde.add(Calendar.DAY_OF_YEAR, -(i + 1));
+			from = desde.getTime();
+			to = hasta.getTime();
+			pendingApplicationsPerDay.put(dateFormat.format(to), this.repository.findPendingAppBetween(from, to));
+			acceptedApplicationsPerDay.put(dateFormat.format(to), this.repository.findAcceptedAppBetween(from, to));
+			rejectedApplicationsPerDay.put(dateFormat.format(to), this.repository.findRejectedAppBetween(from, to));
+		}
+		result.setPendingApplicationsPerDay(pendingApplicationsPerDay);
+		result.setAcceptedApplicationsPerDay(acceptedApplicationsPerDay);
+		result.setRejectedApplicationsPerDay(rejectedApplicationsPerDay);
 		return result;
 	}
 

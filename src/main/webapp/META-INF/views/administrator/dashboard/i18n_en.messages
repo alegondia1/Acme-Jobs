@@ -29,4 +29,8 @@ administrator.dashboard.form.label.avgNumApplPerWorker = Average number of appli
 administrator.dashboard.form.label.avgNumApplPerEmmployer = Average number of applications per employer
 administrator.dashboard.form.label.avgNumJobsPerEmmployer = Average number of jobs per employer
 
+administrator.dashboard.form.label.pendingApplicationsPerDay = Number of pending applications per day during the last four weeks
+administrator.dashboard.form.label.acceptedApplicationsPerDay = Number of accepted applications per day during the last four weeks
+administrator.dashboard.form.label.rejectedApplicationsPerDay = Number of rejected applications per day during the last four weeks
+
 administrator.dashboard.form.button.return = Return
