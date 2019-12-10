@@ -109,6 +109,10 @@ master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.announcements = Anuncios
 master.menu.user-account.messageThreads = Ver mis hilos de mensajes
+master.menu.user-account.become-employer = Hazte empleador
+master.menu.user-account.employer = Datos de empleador
+master.menu.user-account.become-worker = Hazte trabajador
+master.menu.user-account.worker = Datos de trabajador
 
 # master.menu.isAutentificated ####################################################
 
@@ -119,7 +123,7 @@ master.menu.user-account.records = Registros de la compañia
 master.menu.user-account.investorRecord = Lista de registros de inversion
 master.menu.user-account.request = Lista de peticiones
 master.menu.user-account.job.list = Listar los trabajos
-
+		
 # master.footer ###############################################################
 
 master.footer.title.about = Nosotros
