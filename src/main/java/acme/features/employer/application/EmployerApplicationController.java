@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import acme.components.CustomCommand;
 import acme.entities.application.Application;
 import acme.entities.roles.Employer;
 import acme.framework.components.BasicCommand;
@@ -18,9 +19,11 @@ public class EmployerApplicationController extends AbstractController<Employer, 
 
 	//Internal State
 	@Autowired
-	EmployerApplicationListService	listService;
+	EmployerApplicationListService		listService;
 	@Autowired
-	EmployerApplicationShowService	showService;
+	EmployerApplicationShowService		showService;
+	@Autowired
+	EmployerApplicationAcceptService	acceptService;
 
 
 	//Constructors
@@ -28,5 +31,7 @@ public class EmployerApplicationController extends AbstractController<Employer, 
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
+
+		super.addCustomCommand(CustomCommand.ACCEPT, BasicCommand.UPDATE, this.acceptService);
 	}
 }

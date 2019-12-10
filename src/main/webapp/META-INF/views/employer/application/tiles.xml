@@ -26,4 +26,8 @@
 		<put-attribute name="body" type="template" value="../employer/application/form.jsp" />
 	</definition>
 	
+	<definition name="employer/justification/form" extends="master">
+		<put-attribute name="body" type="template" value="../employer/application/form-justification.jsp" />
+	</definition>
+	
 </tiles-definitions>
