@@ -29,4 +29,9 @@ administrator.dashboard.form.label.avgNumApplPerWorker = Media de solicitudes po
 administrator.dashboard.form.label.avgNumApplPerEmmployer = Media de solicitudes por empleado
 administrator.dashboard.form.label.avgNumJobsPerEmmployer = Media de trabajos por empleado
 
+administrator.dashboard.form.label.pendingApplicationsPerDay = Numero de solicitudes pendientes por dia durante las ultimas cuatro semanas
+administrator.dashboard.form.label.acceptedApplicationsPerDay = Numero de solicitudes acceptadas por dia durante las ultimas cuatro semanas
+administrator.dashboard.form.label.rejectedApplicationsPerDay = Numero de solicitudes rechazadas por dia durante las ultimas cuatro semanas
+
+
 administrator.dashboard.form.button.return = Volver
