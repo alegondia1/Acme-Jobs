@@ -1,46 +1,46 @@
 
-package acme.features.worker.application;
+package acme.features.worker.job;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.application.Application;
+import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class WorkerApplicationShowService implements AbstractShowService<Worker, Application> {
+public class WorkerJobShowService implements AbstractShowService<Worker, Job> {
 
 	//Internal State -----------------------------
 	@Autowired
-	WorkerApplicationRepository repository;
+	WorkerJobRepository repository;
 
 
 	@Override
-	public boolean authorise(final Request<Application> request) {
+	public boolean authorise(final Request<Job> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<Application> request, final Application entity, final Model model) {
+	public void unbind(final Request<Job> request, final Job entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "reference", "skills", "moment");
-		request.unbind(entity, model, "statements", "qualifications", "status", "worker.userAccount.username", "job.title");
+		request.unbind(entity, model, "reference", "title", "deadline");
+		request.unbind(entity, model, "salary", "moreInfo", "status", "employer");
 
 	}
 
 	@Override
-	public Application findOne(final Request<Application> request) {
+	public Job findOne(final Request<Job> request) {
 		assert request != null;
 
-		Application result;
+		Job result;
 		int id;
 
 		id = request.getModel().getInteger("id");

@@ -1,0 +1,24 @@
+
+
+worker.job.list.label.deadline = Deadline
+worker.job.list.label.reference = Reference number
+worker.job.list.label.salary = Salary
+worker.job.list.label.title = Title
+
+worker.job.form.button.return = Return
+worker.job.form.label.salary = Salary
+worker.job.form.label.deadline = Deadline
+worker.job.form.label.title = Title
+worker.job.form.label.reference = Reference number
+worker.job.form.label.moreInfo = More info
+worker.job.form.label.status = ¿Published?
+worker.job.form.label.employer = Employer
+worker.job.form.button.auditorRecord = See the auditor records
+worker.job.form.label.accept = I accept that my job once created cannot be deleted or modified
+worker.job.form.label.unique = Ticker must be unique
+worker.job.form.label.reward.error = Reward must be in EUR
+worker.job.form.label.deadline.error = Deadline must be in future
+worker.job.form.label.accept = Must accept the conditions
+worker.job.form.button.descriptor= Descriptor Information
+worker.job.form.button.application = Apply for this job
+worker.job.form.button.create = Create job

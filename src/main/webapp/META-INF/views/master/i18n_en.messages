@@ -54,6 +54,7 @@ master.menu.sponsor.nonCommercialBanner = List non commercial banners
 
 master.menu.worker = Worker
 master.menu.worker.aplication.listmine = List my applications
+master.menu.worker.job.list = See active jobs
 
 # master.menu.auditor #################################################################
 

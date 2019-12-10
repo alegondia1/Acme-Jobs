@@ -77,6 +77,7 @@
 		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN WORKER --%>
 		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
 			<acme:menu-suboption code="master.menu.worker.aplication.listmine" action="/worker/application/list-mine"/>
+			<acme:menu-suboption code="master.menu.worker.job.list" action="/worker/job/list"/>
 		</acme:menu-option>
 		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN AUDITOR --%>
 		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">

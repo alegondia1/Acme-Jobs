@@ -55,6 +55,7 @@ master.menu.employer.job.create = Crear trabajo
 
 master.menu.worker = Trabajador
 master.menu.worker.aplication.listmine = Listar mis solicitudes
+master.menu.worker.job.list = Ver trabajos disponibles
 
 # master.menu.auditor #################################################################
 
