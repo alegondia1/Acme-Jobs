@@ -21,7 +21,6 @@ import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
-import acme.framework.entities.UserAccount;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
@@ -47,17 +46,8 @@ public class AdministratorRequestAuditorDeleteService implements AbstractDeleteS
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		int userAccountId;
-		UserAccount user;
-		RequestAuditor requestAud;
-		int id;
 
-		id = request.getModel().getInteger("id");
-		requestAud = this.repository.findOneById(id);
-		userAccountId = requestAud.getIdUser();
-		user = this.repository.findOneUserAccountById(userAccountId);
-		model.setAttribute("user", user.getUsername());
-		request.unbind(entity, model, "firm", "responsibilityStatement");
+		request.unbind(entity, model, "firm", "responsibilityStatement", "user.username");
 	}
 
 	@Override
@@ -79,7 +69,7 @@ public class AdministratorRequestAuditorDeleteService implements AbstractDeleteS
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "idUser");
+		request.bind(entity, errors, "user");
 
 	}
 
@@ -100,10 +90,8 @@ public class AdministratorRequestAuditorDeleteService implements AbstractDeleteS
 		mode = request.getModel().getString("mode");
 		if (mode.equals("accept")) {
 			Auditor auditor = new Auditor();
-			UserAccount user;
 
-			user = this.repository.findOneUserAccountById(entity.getIdUser());
-			auditor.setUserAccount(user);
+			auditor.setUserAccount(entity.getUser());
 			auditor.setFirm(entity.getFirm());
 			auditor.setResponsibilityStatement(entity.getResponsibilityStatement());
 			this.repository.save(auditor);

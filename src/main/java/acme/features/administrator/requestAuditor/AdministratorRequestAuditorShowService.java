@@ -19,7 +19,6 @@ import acme.entities.requestAuditor.RequestAuditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
-import acme.framework.entities.UserAccount;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -45,17 +44,8 @@ public class AdministratorRequestAuditorShowService implements AbstractShowServi
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		int userAccountId;
-		UserAccount user;
-		RequestAuditor requestAud;
-		int id;
 
-		id = request.getModel().getInteger("id");
-		requestAud = this.repository.findOneById(id);
-		userAccountId = requestAud.getIdUser();
-		user = this.repository.findOneUserAccountById(userAccountId);
-		model.setAttribute("user", user.getUsername());
-		request.unbind(entity, model, "firm", "responsibilityStatement");
+		request.unbind(entity, model, "firm", "responsibilityStatement", "user.username");
 	}
 
 	@Override

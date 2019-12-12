@@ -268,8 +268,8 @@
        `id` integer not null,
         `version` integer not null,
         `firm` varchar(255),
-        `id_user` integer,
         `responsibility_statement` varchar(255),
+        `user_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -316,12 +316,18 @@
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
+create index IDXg54pxa1gngqheaipukeg8jypk on `application` (`moment`);
+create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
+create index IDX5wwxv107kvi5si12nh4226lnx on `application` (`moment`, `status`);
 
     alter table `application` 
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
 
     alter table `descriptor_duty` 
        add constraint UK_gicb7at1idsamnu3xgj4i91vc unique (`dutys_id`);
+create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
+create index IDX28ur9xm72oo1df9g14xhnh8h3 on `job` (`status`);
+create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
@@ -454,6 +460,11 @@
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
        foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `request_auditor` 
+       add constraint `FKg9gmiivm111rnb6yd8eq82kbk` 
+       foreign key (`user_id`) 
        references `user_account` (`id`);
 
     alter table `sponsor` 

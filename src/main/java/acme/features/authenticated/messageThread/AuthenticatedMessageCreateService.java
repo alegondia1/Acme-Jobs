@@ -104,11 +104,13 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 
 	private Boolean check(final String data) {
 		Boolean result = false;
+		long count;
 		CustomizationParameters customizationParameter;
 		customizationParameter = this.spamRepository.find();
-		//Double threeshold = customizationParameter.getSpamThreshold();
+		Double threeshold = customizationParameter.getSpamThreshold();
 		Collection<String> spamwords = customizationParameter.getSpamWords();
-		result = spamwords.stream().anyMatch(X -> data.toLowerCase().contains(X));
+		count = spamwords.stream().mapToLong(X -> Arrays.asList(data.split(X)).stream().count()).sum();
+		result = count >= threeshold;
 		return result;
 	}
 

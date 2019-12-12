@@ -24,6 +24,8 @@ public class EmployerApplicationController extends AbstractController<Employer, 
 	EmployerApplicationShowService		showService;
 	@Autowired
 	EmployerApplicationAcceptService	acceptService;
+	@Autowired
+	EmployerApplicationListMineService	listMineService;
 
 
 	//Constructors
@@ -32,6 +34,7 @@ public class EmployerApplicationController extends AbstractController<Employer, 
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 
+		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
 		super.addCustomCommand(CustomCommand.ACCEPT, BasicCommand.UPDATE, this.acceptService);
 	}
 }

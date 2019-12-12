@@ -64,6 +64,7 @@
 		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
 			<acme:menu-suboption code="master.menu.employer.job.listmine" action="/employer/job/list-mine"/>
 			<acme:menu-suboption code="master.menu.employer.job.create" action="/employer/job/create"/>
+			<acme:menu-suboption code="master.menu.employer.application.listmine" action="/employer/application/list-mine"/>
 		</acme:menu-option>
 		
 		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN SPONSOR --%>

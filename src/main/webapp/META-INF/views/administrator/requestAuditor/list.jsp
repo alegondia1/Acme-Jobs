@@ -18,5 +18,5 @@
 
 <acme:list>
 	<acme:list-column code="administrator.requestAuditor.list.label.firm" path="firm" width="70%"/>		
-	<acme:list-column code="administrator.requestAuditor.list.label.user" path="user" width="30%"/>	
+	<acme:list-column code="administrator.requestAuditor.list.label.user" path="user.username" width="30%"/>	
 </acme:list>

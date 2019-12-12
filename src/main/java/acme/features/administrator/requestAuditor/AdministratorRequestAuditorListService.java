@@ -21,7 +21,6 @@ import acme.entities.requestAuditor.RequestAuditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
-import acme.framework.entities.UserAccount;
 import acme.framework.services.AbstractListService;
 
 @Service
@@ -47,11 +46,8 @@ public class AdministratorRequestAuditorListService implements AbstractListServi
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		UserAccount user;
 
-		user = this.repository.findOneUserAccountById(entity.getIdUser());
-		model.setAttribute("user", user.getUsername());
-		request.unbind(entity, model, "firm", "responsibilityStatement");
+		request.unbind(entity, model, "firm", "responsibilityStatement", "user.username");
 	}
 
 	@Override
