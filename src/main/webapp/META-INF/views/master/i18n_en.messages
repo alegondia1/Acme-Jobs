@@ -60,8 +60,8 @@ master.menu.worker.job.list = See active jobs
 # master.menu.auditor #################################################################
 
 master.menu.auditor = Auditor
-master.menu.auditor.job.listother = List jobs with my auditor record
-master.menu.auditor.job.listmine = List jobs without my auditor record
+master.menu.auditor.job.listother = List jobs without my auditor record
+master.menu.auditor.job.listmine = List jobs with my auditor record
 master.menu.auditor.auditorRecord.list = List my auditor records
 
 # master.menu.administrator ###################################################

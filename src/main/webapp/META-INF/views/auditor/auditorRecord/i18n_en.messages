@@ -8,5 +8,7 @@ auditor.auditorRecord.form.label.moment = Moment
 auditor.auditorRecord.form.label.body = Body
 auditor.auditorRecord.form.label.username = Username
 auditor.auditorRecord.form.label.job = Job's title
-	
+auditor.auditorRecord.form.label.status = Published
+auditor.auditorRecord.form.button.create = Create
+auditor.auditorRecord.form.button.update = Update
 auditor.auditorRecord.form.button.return = Return

@@ -61,8 +61,8 @@ master.menu.worker.job.list = Ver trabajos disponibles
 # master.menu.auditor #################################################################
 
 master.menu.auditor = Auditor
-master.menu.auditor.job.listother = Listar trabajos con mis registros de auditor
-master.menu.auditor.job.listmine = Listar trabajos sin mis registros de auditor
+master.menu.auditor.job.listother = Listar trabajos sin mis registros de auditor
+master.menu.auditor.job.listmine = Listar trabajos con mis registros de auditor
 master.menu.auditor.auditorRecord.list = Listar mis registros de auditor
 master.menu.employer = Employer
 master.menu.employer.job.listmine = Listar mis trabajos
