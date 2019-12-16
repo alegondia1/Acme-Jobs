@@ -1,11 +1,11 @@
 
 package acme.features.employer.job;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import acme.entities.customizationParameters.CustomizationParameters;
 import acme.entities.descriptor.Descriptor;
@@ -82,7 +82,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		customizationParameter = this.spamRepository.find();
 		Double threeshold = customizationParameter.getSpamThreshold();
 		Collection<String> spamwords = customizationParameter.getSpamWords();
-		count = spamwords.stream().mapToLong(X -> Arrays.asList(data.split(X)).stream().count()).sum();
+		count = spamwords.stream().mapToLong(X -> StringUtils.countOccurrencesOf(data, X)).sum();
 		result = count >= threeshold;
 		return result;
 	}

@@ -1,11 +1,16 @@
 
 package acme.features.sponsor.commercialBanner;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import acme.entities.commercialBanner.CommercialBanner;
+import acme.entities.customizationParameters.CustomizationParameters;
 import acme.entities.roles.Sponsor;
+import acme.features.administrator.customization.AdministratorCustomizationParametersRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -17,7 +22,9 @@ public class SponsorCommercialBannerUpdateService implements AbstractUpdateServi
 
 	//Internal State -----------------------------
 	@Autowired
-	SponsorCommercialBannerRepository repository;
+	SponsorCommercialBannerRepository				repository;
+	@Autowired
+	AdministratorCustomizationParametersRepository	spamRepository;
 
 
 	@Override
@@ -76,6 +83,21 @@ public class SponsorCommercialBannerUpdateService implements AbstractUpdateServi
 		assert entity != null;
 		assert errors != null;
 
+		errors.state(request, !this.check(entity.getSlogan()), "slogan", "sponsor.banner.form.label.isspam");
+		errors.state(request, !this.check(entity.getUrl()), "url", "sponsor.banner.form.label.isspam");
+		errors.state(request, !this.check(entity.getPicture()), "picture", "sponsor.banner.form.label.isspam");
+
+	}
+	private Boolean check(final String data) {
+		Boolean result = false;
+		long count;
+		CustomizationParameters customizationParameter;
+		customizationParameter = this.spamRepository.find();
+		Double threeshold = customizationParameter.getSpamThreshold();
+		Collection<String> spamwords = customizationParameter.getSpamWords();
+		count = spamwords.stream().mapToLong(X -> StringUtils.countOccurrencesOf(data, X)).sum();
+		result = count >= threeshold;
+		return result;
 	}
 
 	@Override
