@@ -1,11 +1,15 @@
 
 package acme.features.sponsor.commercialBanner;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.commercialBanner.CommercialBanner;
+import acme.entities.customizationParameters.CustomizationParameters;
 import acme.entities.roles.Sponsor;
+import acme.features.administrator.customization.AdministratorCustomizationParametersRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -17,7 +21,9 @@ public class SponsorCommercialBannerCreateService implements AbstractCreateServi
 
 	//Internal State ----------------------------
 	@Autowired
-	SponsorCommercialBannerRepository repository;
+	SponsorCommercialBannerRepository				repository;
+	@Autowired
+	AdministratorCustomizationParametersRepository	spamRepository;
 
 
 	@Override
@@ -72,7 +78,23 @@ public class SponsorCommercialBannerCreateService implements AbstractCreateServi
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		boolean accept = false;
+		accept = request.getModel().getBoolean("accept");
 
+		errors.state(request, accept, "accept", "authenticated.message.form.label.accept");
+		errors.state(request, !this.check(entity.getSlogan), "slogan", "authenticated.message.form.label.isspam");
+		errors.state(request, !this.check(entity.getPicture), "picture", "authenticated.message.form.label.isspam");
+		errors.state(request, !this.check(entity.getUrl), "url", "authenticated.message.form.label.isspam");
+
+	}
+	private Boolean check(final String data) {
+		Boolean result = false;
+		CustomizationParameters customizationParameter;
+		customizationParameter = this.spamRepository.find();
+		//Double threeshold = customizationParameter.getSpamThreshold();
+		Collection<String> spamwords = customizationParameter.getSpamWords();
+		result = spamwords.stream().anyMatch(X -> data.toLowerCase().contains(X));
+		return result;
 	}
 
 	@Override
