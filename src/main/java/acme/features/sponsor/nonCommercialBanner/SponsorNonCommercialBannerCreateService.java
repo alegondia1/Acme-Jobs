@@ -1,9 +1,12 @@
 
 package acme.features.sponsor.nonCommercialBanner;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.customizationParameters.CustomizationParameters;
 import acme.entities.nonCommercialBanner.NonCommercialBanner;
 import acme.entities.roles.Sponsor;
 import acme.framework.components.Errors;
@@ -79,6 +82,15 @@ public class SponsorNonCommercialBannerCreateService implements AbstractCreateSe
 		errors.state(request, !this.check(entity.getUrl), "url", "authenticated.message.form.label.isspam");
 		errors.state(request, !this.check(entity.getPicture), "picture", "authenticated.message.form.label.isspam");
 
+	}
+	private Boolean check(final String data) {
+		Boolean result = false;
+		CustomizationParameters customizationParameter;
+		customizationParameter = this.spamRepository.find();
+		//Double threeshold = customizationParameter.getSpamThreshold();
+		Collection<String> spamwords = customizationParameter.getSpamWords();
+		result = spamwords.stream().anyMatch(X -> data.toLowerCase().contains(X));
+		return result;
 	}
 
 	@Override
