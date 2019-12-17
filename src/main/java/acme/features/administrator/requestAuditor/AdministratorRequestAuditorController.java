@@ -13,7 +13,7 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Administrator;
 
 @Controller
-@RequestMapping("/administrator/requestAuditor/")
+@RequestMapping("/administrator/request-auditor/")
 public class AdministratorRequestAuditorController extends AbstractController<Administrator, RequestAuditor> {
 
 	//Internal State

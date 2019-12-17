@@ -71,7 +71,7 @@ public class AuthenticatedAuditorUpdateService implements AbstractUpdateService<
 		int userAccountId;
 
 		principal = request.getPrincipal();
-		userAccountId = principal.getAccountId();
+		userAccountId = principal.getActiveRoleId();
 
 		result = this.repository.findOneAuditorByUserAccountId(userAccountId);
 

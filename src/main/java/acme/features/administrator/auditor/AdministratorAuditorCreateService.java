@@ -15,6 +15,7 @@ package acme.features.administrator.auditor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.requestAuditor.RequestAuditor;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
@@ -71,17 +72,12 @@ public class AdministratorAuditorCreateService implements AbstractCreateService<
 	@Override
 	public Auditor instantiate(final Request<Auditor> request) {
 		assert request != null;
+		Integer id = request.getModel().getInteger("id");
+		Auditor result = new Auditor();
+		RequestAuditor requestAuditor = this.repository.findOneById(id);
+		requestAuditor.getIdUser();
+		UserAccount userAccount = this.repository.findOneUserAccountById(Integer.getInteger("id"));
 
-		Auditor result;
-		Principal principal;
-		int userAccountId;
-		UserAccount userAccount;
-
-		principal = request.getPrincipal();
-		userAccountId = principal.getAccountId();
-		userAccount = this.repository.findOneUserAccountById(userAccountId);
-
-		result = new Auditor();
 		result.setUserAccount(userAccount);
 
 		return result;

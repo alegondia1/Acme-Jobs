@@ -5,21 +5,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.requestAuditor.RequestAuditor;
-import acme.entities.roles.Auditor;
-import acme.features.administrator.requestAuditor.AdministratorRequestAuditorRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Administrator;
+import acme.framework.entities.Authenticated;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class AuthenticatedRequestAuditorCreateService implements AbstractCreateService<Administrator, RequestAuditor> {
+public class AuthenticatedRequestAuditorCreateService implements AbstractCreateService<Authenticated, RequestAuditor> {
 
 	//Internal State -----------------------------
 	@Autowired
-	AdministratorRequestAuditorRepository repository;
+	AuthenticatedRequestAuditorRepository repository;
 
 
 	@Override
@@ -50,21 +48,13 @@ public class AuthenticatedRequestAuditorCreateService implements AbstractCreateS
 
 	@Override
 	public RequestAuditor instantiate(final Request<RequestAuditor> request) {
+		assert request != null;
 		RequestAuditor result = new RequestAuditor();
 		Principal principal;
-		Auditor auditor;
-
-		String auditorFirm;
-		String auditorResponsibilityStatement;
-		Integer auditorId;
+		int auditorId;
 		principal = request.getPrincipal();
-		auditorId = principal.getActiveRoleId();
-		auditor = this.repository.findOneAuditorByUserAccountId(auditorId);
-		auditorFirm = auditor.getFirm();
-		auditorResponsibilityStatement = auditor.getResponsibilityStatement();
+		auditorId = principal.getAccountId();
 
-		result.setFirm(auditorFirm);
-		result.setResponsibilityStatement(auditorResponsibilityStatement);
 		result.setIdUser(auditorId);
 
 		return result;

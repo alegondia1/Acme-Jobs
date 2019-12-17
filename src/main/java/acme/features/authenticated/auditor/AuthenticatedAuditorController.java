@@ -22,7 +22,6 @@ import acme.entities.roles.Auditor;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Authenticated;
-import acme.framework.services.AbstractService;
 
 @Controller
 @RequestMapping("/authenticated/auditor/")
@@ -31,10 +30,10 @@ public class AuthenticatedAuditorController extends AbstractController<Authentic
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AbstractService<Authenticated, Auditor>	createService;
+	private AuthenticatedAuditorCreateService	createService;
 
 	@Autowired
-	private AuthenticatedAuditorUpdateService		updateService;
+	private AuthenticatedAuditorUpdateService	updateService;
 
 
 	// Constructors -----------------------------------------------------------

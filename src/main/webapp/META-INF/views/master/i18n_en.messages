@@ -71,6 +71,7 @@ master.menu.administrator.announcement = List all announcements
 master.menu.administrator.challenge = List challenges
 master.menu.administrator.announcement.create = Create announcement
 master.menu.administrator.challenge.create = Create challenge
+master.menu.administrator.requestAuditor = List auditor requests
 master.menu.administrator.records.create = Create company records
 master.menu.administrator.records = List company records
 master.menu.administrator.commercialBanner.create = Create commercial banner
@@ -82,6 +83,7 @@ master.menu.administrator.customizationParameters.create = Add spam word
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.investorRecord= List investor records
 master.menu.administrator.investorRecord.create= Create new investor record
+master.menu.administrator.requestAuditor= List auditor requests 
 
 
 
@@ -112,6 +114,8 @@ master.menu.user-account.become-employer = Become a employer
 master.menu.user-account.employer = Employer data
 master.menu.user-account.become-worker = Become worker
 master.menu.user-account.worker = Worker data
+master.menu.user-account.become-auditor = Become auditor
+master.menu.user-account.auditor = Auditor data
 
 # master.menu.isAutentificated ####################################################
 

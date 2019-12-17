@@ -46,6 +46,8 @@
 			<acme:menu-suboption code="master.menu.administrator.investorRecord.create" action="/administrator/investor-record/create"/>
 			<acme:menu-suboption code="master.menu.administrator.investorRecord" action="/administrator/investor-record/list"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show-data"/>
+			<acme:menu-suboption code="master.menu.administrator.requestAuditor" action="/administrator/request-auditor/list"/>
+			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 		</acme:menu-option>
@@ -81,6 +83,7 @@
 		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN AUDITOR --%>
 		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
 			<acme:menu-suboption code="master.menu.auditor.auditorRecord.list" action="/auditor/auditor-record/list-mine"/>
+			<acme:menu-suboption code="master.menu.auditor.auditorRecord.create" action="/auditor/auditor-record/create"/>	
 			<acme:menu-suboption code="master.menu.auditor.job.listmine" action="/auditor/job/list?mode=mine"/>
 			<acme:menu-suboption code="master.menu.auditor.job.listother" action="/auditor/job/list?mode=other"/>
 		</acme:menu-option>
@@ -113,6 +116,8 @@
 			<acme:menu-suboption code="master.menu.user-account.employer" action="/authenticated/employer/update" access="hasRole('Employer')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-worker" action="/authenticated/worker/create" access="!hasRole('Worker')"/>
 			<acme:menu-suboption code="master.menu.user-account.worker" action="/authenticated/worker/update" access="hasRole('Worker')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-auditor" action="/authenticated/request-auditor/create" access="!hasRole('Auditor')"/>
+			<acme:menu-suboption code="master.menu.user-account.auditor" action="/authenticated/auditor/update" access="hasRole('Auditor')"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>

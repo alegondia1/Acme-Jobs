@@ -15,15 +15,11 @@
 <!DOCTYPE tiles-definitions PUBLIC 
 	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
-	
+
 <tiles-definitions>
 
-	<definition name="administrator/request-auditor/list" extends="master">		
-		<put-attribute name="body" type="template" value="../administrator/requestAuditor/list.jsp" />
+	<definition name="authenticated/request-auditor/form" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/requestAuditor/form.jsp" />
 	</definition>
 	
-	<definition name="administrator/request-auditor/form" extends="master">
-		<put-attribute name="body" type="template" value="../administrator/requestAuditor/form.jsp" />
-	</definition>
-
 </tiles-definitions>

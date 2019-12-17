@@ -22,7 +22,6 @@ import acme.entities.roles.Auditor;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Administrator;
-import acme.framework.services.AbstractService;
 
 @Controller
 @RequestMapping("/administrator/auditor/")
@@ -31,10 +30,10 @@ public class AdministratorAuditorController extends AbstractController<Administr
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AbstractService<Administrator, Auditor>	createService;
+	private AdministratorAuditorCreateService	createService;
 
 	@Autowired
-	private AdministratorAuditorUpdateService		updateService;
+	private AdministratorAuditorUpdateService	updateService;
 
 
 	// Constructors -----------------------------------------------------------

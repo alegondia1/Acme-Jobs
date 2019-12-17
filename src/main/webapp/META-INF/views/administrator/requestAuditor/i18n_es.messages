@@ -8,19 +8,16 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.announcement.list.label.moment = Momento
-administrator.announcement.list.label.title = Titulo
+administrator.requestAuditor.list.label.firm = Compañía
+administrator.requestAuditor.list.label.responsibilityStatement = Declaración de responsabilidad
+administrator.requestAuditor.list.label.idUser = ID de usuario
+administrator.requestAuditor.form.button.return = Volver
+administrator.auditor.form.button.create = Aceptar
+administrator.requestAuditor.form.button.delete = Denegar
 
-administrator.announcement.form.button.return = Volver
-administrator.announcement.form.button.update = Actualizar
-administrator.announcement.form.button.delete = Borrar
-administrator.announcement.form.button.create = Crear
+administrator.requestAuditor.form.label.firm = Compañía
+administrator.requestAuditor.form.label.responsibilityStatement = Declaración de responsabilidad
+administrator.requestAuditor.form.label.idUser = ID de usuario
 
-administrator.announcement.form.label.text = Texto
-administrator.announcement.form.label.moreInfo = Link
-administrator.announcement.form.label.moment = Momento
-administrator.announcement.form.label.title = Titulo
-
-administrator.announcement.form.button.update = Actualizar
-administrator.announcement.form.button.delete = Eliminar
-administrator.announcement.form.button.create = Crear
+administrator.auditor.form.button.update = Aceptar
+administrator.requestAuditor.form.button.delete = Denegar

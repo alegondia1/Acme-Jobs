@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import acme.entities.requestAuditor.RequestAuditor;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Administrator;
+import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/authenticated/requestAuditor/")
-public class AuthenticatedRequestAuditorController extends AbstractController<Administrator, RequestAuditor> {
+@RequestMapping("/authenticated/request-auditor/")
+public class AuthenticatedRequestAuditorController extends AbstractController<Authenticated, RequestAuditor> {
 
 	//Internal State
 	@Autowired

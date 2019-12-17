@@ -17,8 +17,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="administrator.requestAuditor.list.label.firm" path="firm" width="20%"/>
-	<acme:list-column code="administrator.requestAuditor.list.label.responsibilityStatement" path="responsibilityStatement" width="60%"/>		
-	<acme:list-column code="administrator.requestAuditor.list.label.idUser" path="idUser" width="20%"/>		
+	<acme:list-column code="administrator.requestAuditor.list.label.firm" path="firm" width="30%"/>
+	<acme:list-column code="administrator.requestAuditor.list.label.responsibilityStatement" path="responsibilityStatement" width="40%"/>		
+	<acme:list-column code="administrator.requestAuditor.list.label.idUser" path="idUser" width="30%"/>		
 	
 </acme:list>

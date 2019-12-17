@@ -29,4 +29,5 @@ auditor.job.form.label.deadline.error = La fecha debe ser en futuro
 auditor.job.form.label.accept = Debe aceptar las condiciones
 
 auditor.job.form.button.auditorRecord = Ver los registros de auditor
+auditor.job.form.button.auditorRecord.create = Escribir un registro de auditor
 auditor.job.form.button.create = Crear oferta

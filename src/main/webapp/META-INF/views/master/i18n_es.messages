@@ -73,6 +73,7 @@ master.menu.administrator.shutdown = Parar el sistema
 master.menu.administrator.announcement = Listar todos los anuncios
 master.menu.administrator.challenge = Listar todos los retos
 master.menu.administrator.challenge.create = Crear reto
+master.menu.administrator.requestAuditor = Listar peticiones de auditor
 master.menu.administrator.announcement.create = Crear anuncio
 master.menu.administrator.records = Listar registros de la compañia
 master.menu.administrator.records.create = Crear registros de la compañia
@@ -85,6 +86,7 @@ master.menu.administrator.customizationParameters.create = Añadir palabra de sp
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.investorRecord= Lista de registros de inversion
 master.menu.administrator.investorRecord.create= Crear nuevo registro de inversionista
+master.menu.administrator.requestAuditor= Listar peticiones de auditor 
 
 # master.menu.provider ########################################################
 
@@ -113,6 +115,8 @@ master.menu.user-account.become-employer = Hazte empleador
 master.menu.user-account.employer = Datos de empleador
 master.menu.user-account.become-worker = Hazte trabajador
 master.menu.user-account.worker = Datos de trabajador
+master.menu.user-account.become-auditor = Hazte auditor
+master.menu.user-account.auditor = Datos de auditor
 
 # master.menu.isAutentificated ####################################################
 
