@@ -15,6 +15,10 @@
 	</div>
 	<acme:form-submit code="auditor.job.form.button.descriptor"
 				  method="get" action="/authenticated/descriptor/show?id=${id}"/>
+				  
+	<acme:form-submit code="auditor.job.form.button.auditorRecord"
+				  method="get" action="/authenticated/auditor-record/show?id=${id}"/>
+				  
 	<acme:form-submit code="auditor.job.form.button.auditorRecord" method="get" action="/auditor/auditor-record/list?id=${id}"/>
 	<acme:form-return code="auditor.job.form.button.return"/>
 </acme:form>

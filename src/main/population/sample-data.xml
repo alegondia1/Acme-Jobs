@@ -164,6 +164,7 @@
 		<property name="userAccount" ref="employer2UserAccount" />
 	</bean>
 	<!-- AUDITORS -->
+	
 	<bean name="auditor1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="auditor1" />
 		<property name="password" value="auditor1" />
@@ -185,7 +186,7 @@
 
 	<bean name="auditor1Auditor" class="acme.entities.roles.Auditor">
 		<property name="userAccount" ref="auditor1UserAccount" />
-		<property name="firm" value="Firma 1" />
+		<property name="firm" value="Compañía 1" />
 		<property name="responsibilityStatement" value="Algo que poner" />
 	</bean>
 	
@@ -214,7 +215,7 @@
 
 	<bean name="auditor2Auditor" class="acme.entities.roles.Auditor">
 		<property name="userAccount" ref="auditor2UserAccount" />
-		<property name="firm" value="Firma 2" />
+		<property name="firm" value="Compañía 2" />
 		<property name="responsibilityStatement" value="Algo que poner" />
 	</bean>
 	
@@ -280,6 +281,28 @@
 	<bean name="worker2Autenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="worker2UserAccount" />
 	</bean>
+	
+	<!-- AUDITOR REQUESTS -->
+	
+	<bean id="RequestAuditor1" class="acme.entities.requestAuditor.RequestAuditor">
+		<property name="firm" value="Firm1"/>
+		<property name="responsibilityStatement" value="ResponsibilityStatement1"/>
+		<property name="idUser" value="1"/>
+	</bean>
+	
+	<bean id="RequestAuditor2" class="acme.entities.requestAuditor.RequestAuditor">
+		<property name="firm" value="Firm2"/>
+		<property name="responsibilityStatement" value="ResponsibilityStatement2"/>
+		<property name="idUser" value="2"/>
+	</bean>
+	
+	<bean id="RequestAuditor3" class="acme.entities.requestAuditor.RequestAuditor">
+		<property name="firm" value="Firm3"/>
+		<property name="responsibilityStatement" value="ResponsibilityStatement3"/>
+		<property name="idUser" value="3"/>
+	</bean>
+	
+	
 	<!-- ANNOUNCEMENTS -->
 	<bean id="Announcement01" class="acme.entities.announcement.Announcement">
 		<property name="title" value="Titulo01"/>
