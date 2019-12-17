@@ -77,6 +77,7 @@ public class EmployerDescriptorUpdateService implements AbstractUpdateService<Em
 		Double percentaje = 0.0;
 		Boolean cont = true;
 		int i = 1;
+		Collection<Duty> dutys = new ArrayList<Duty>();
 		while (cont) {
 			if (request.getModel().hasAttribute("percentaje" + i)) {
 				String title = request.getModel().getString("title" + i);
@@ -92,11 +93,12 @@ public class EmployerDescriptorUpdateService implements AbstractUpdateService<Em
 						duty.setDescription(description);
 						duty.setPercentaje(perc);
 						duty.setTitle(title);
-						Collection<Duty> dutys = entity.getDutys();
-						if (!dutys.stream().anyMatch(X -> X.getDescription().equals(duty.getDescription()) && X.getTitle().equals(duty.getTitle()) && X.getPercentaje().equals(duty.getPercentaje()))) {
-							dutys.add(duty);
+						if (request.getModel().hasAttribute("id" + i)) {
+							int id = request.getModel().getInteger("id" + i);
+							duty.setId(id);
 						}
-						request.getModel().setAttribute("dutys", dutys);
+						dutys.add(duty);
+
 					} else {
 						errors.state(request, false, "dutys", "employer.descriptor.form.label.percentajenumber");
 						cont = false;
@@ -107,6 +109,7 @@ public class EmployerDescriptorUpdateService implements AbstractUpdateService<Em
 			}
 			i = i + 1;
 		}
+		request.getModel().setAttribute("dutys", dutys);
 		errors.state(request, percentaje == 100.0, "dutys", "employer.descriptor.form.label.percentajemax");
 
 	}

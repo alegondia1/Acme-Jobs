@@ -4,8 +4,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 <jstl:if test="${command != 'create'}">
 <acme:form>
-	<acme:form-textbox code="authenticated.messageThread.form.label.title" path="title"/>
-	<acme:form-moment code="authenticated.messageThread.form.label.moment" path="moment"/>
+	<acme:form-textbox readonly="true" code="authenticated.messageThread.form.label.title" path="title"/>
+	<acme:form-moment readonly="true" code="authenticated.messageThread.form.label.moment" path="moment"/>
 	<label><acme:message code="authenticated.message.list"/></label>
 	<table id="list" class="table table-striped table-condensed table-hover nowrap w-100">
 	<thead>
