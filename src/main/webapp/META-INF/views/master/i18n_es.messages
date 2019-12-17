@@ -50,17 +50,19 @@ master.menu.anonymous.investorRecordStars = Lista de registros de inversion con 
 master.menu.employer = Empleador
 master.menu.employer.job.listmine = Listar mis trabajos
 master.menu.employer.job.create = Crear trabajo
+master.menu.employer.application.listmine = Listar las solicitudes de mis trabajos
 
 # master.menu.worker #################################################################
 
 master.menu.worker = Trabajador
 master.menu.worker.aplication.listmine = Listar mis solicitudes
+master.menu.worker.job.list = Ver trabajos disponibles
 
 # master.menu.auditor #################################################################
 
 master.menu.auditor = Auditor
-master.menu.auditor.job.listother = Listar trabajos con mis registros de auditor
-master.menu.auditor.job.listmine = Listar trabajos sin mis registros de auditor
+master.menu.auditor.job.listother = Listar trabajos sin mis registros de auditor
+master.menu.auditor.job.listmine = Listar trabajos con mis registros de auditor
 master.menu.auditor.auditorRecord.list = Listar mis registros de auditor
 master.menu.employer = Employer
 master.menu.employer.job.listmine = Listar mis trabajos
@@ -85,6 +87,7 @@ master.menu.administrator.customizationParameters.create = Añadir palabra de sp
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.investorRecord= Lista de registros de inversion
 master.menu.administrator.investorRecord.create= Crear nuevo registro de inversionista
+master.menu.administrator.requestAuditor = Ver las peticiones para auditor
 
 # master.menu.provider ########################################################
 
@@ -113,6 +116,8 @@ master.menu.user-account.become-employer = Hazte empleador
 master.menu.user-account.employer = Datos de empleador
 master.menu.user-account.become-worker = Hazte trabajador
 master.menu.user-account.worker = Datos de trabajador
+master.menu.user-account.become-auditor = Peticion para hacerse auditor
+master.menu.user-account.auditor = Datos de auditor
 
 # master.menu.isAutentificated ####################################################
 

@@ -91,6 +91,10 @@
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
 
+    alter table `request_auditor` 
+       drop 
+       foreign key `FKg9gmiivm111rnb6yd8eq82kbk`;
+
     alter table `sponsor` 
        drop 
        foreign key FK_20xk0ev32hlg96kqynl6laie2;

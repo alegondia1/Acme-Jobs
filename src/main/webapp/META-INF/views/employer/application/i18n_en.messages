@@ -8,7 +8,13 @@ employer.application.form.label.skills = Skills
 employer.application.form.label.qualifications = Qualifications
 employer.application.form.label.statements = Statements
 employer.application.form.label.status = Status
-
+employer.application.form.label.statusnotvalid = You cannot change the status of an application already accepted or rejected
+employer.application.form.button.accept = Accept application
+employer.application.form.button.reject = Reject application
 employer.application.form.label.worker = Worker
 employer.application.form.label.job = Job
 employer.application.form.button.return = Return
+
+employer.application.form.label.justification.reason = Reasons for reject
+employer.application.form.label.justification.application = Application
+employer.application.form.label.justification.create = Reject

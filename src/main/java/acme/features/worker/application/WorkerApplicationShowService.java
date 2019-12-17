@@ -32,7 +32,7 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "skills", "moment");
-		request.unbind(entity, model, "statements", "qualifications", "status", "worker", "job");
+		request.unbind(entity, model, "statements", "qualifications", "status", "worker.userAccount.username", "job.title");
 
 	}
 

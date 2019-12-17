@@ -17,6 +17,7 @@ sponsor.nonCommercialBanner.form.label.slogan = Eslogan
 sponsor.nonCommercialBanner.form.label.jingle = Cascabeleo
 sponsor.nonCommercialBanner.form.label.username = Sponsor
 
+sponsor.banner.form.label.isspam = Contiene palabras consideradas spam
 sponsor.nonCommercialBanner.form.button.update = Actualizar
 sponsor.nonCommercialBanner.form.button.delete = Eliminar
 sponsor.nonCommercialBanner.form.button.create = Crear

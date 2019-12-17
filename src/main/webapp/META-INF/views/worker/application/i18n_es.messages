@@ -8,11 +8,13 @@ worker.application.form.label.skills = Habilidades
 worker.application.form.label.qualifications = Calificaciones
 worker.application.form.label.statements = Declaraciones
 worker.application.form.label.status = Estado
-
+worker.application.form.label.notunique = Ya existe la referencia
+worker.application.form.label.already = Ya has solicitado este trabajo
+worker.application.form.label.notreference =Deben ser cuatro letras
 worker.application.form.label.justification.reason = Razones
 worker.application.form.label.app = Solicitud
 worker.application.form.label.button.justification = Ver justificación del rechazo
-
+worker.application.form.label.button.create = Solicitar
 worker.application.form.label.worker = Trabajador
 worker.application.form.label.job = Trabajo
 worker.application.form.button.return = Volver

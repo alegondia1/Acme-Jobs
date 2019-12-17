@@ -83,7 +83,7 @@ public class EmployerDescriptorUpdateService implements AbstractUpdateService<Em
 				String description = request.getModel().getString("description" + i);
 				if (!(title.isEmpty() || description.isEmpty())) {
 					if (this.isNumeric(request.getModel().getAttribute("percentaje" + i).toString())) {
-						Double perc = request.getModel().getDouble("percentaje" + i);
+						Double perc = Double.parseDouble(request.getModel().getAttribute("percentaje" + i).toString().replace(",", "."));
 						percentaje = percentaje + perc;
 					} else {
 						errors.state(request, false, "dutys", "employer.descriptor.form.label.percentajenumber");
@@ -143,7 +143,7 @@ public class EmployerDescriptorUpdateService implements AbstractUpdateService<Em
 						Integer id = request.getModel().getInteger("id" + i);
 						duty.setId(id);
 					}
-					Double percentaje = request.getModel().getDouble("percentaje" + i);
+					Double percentaje = Double.parseDouble(request.getModel().getAttribute("percentaje" + i).toString().replace(",", "."));
 					duty.setTitle(title);
 					duty.setDescription(description);
 					duty.setPercentaje(percentaje);

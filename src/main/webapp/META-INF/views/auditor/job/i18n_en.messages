@@ -21,5 +21,8 @@ auditor.job.form.label.reward.error = Reward must be in EUR
 auditor.job.form.label.deadline.error = Deadline must be in future
 auditor.job.form.label.accept = Must accept the conditions
 
+auditor.job.form.button.auditorRecord.create = Write my auditor record
+auditor.job.form.button.auditorRecord.update = Update my auditor record
+auditor.job.form.button.auditorRecord.show = Show my auditor record
 auditor.job.form.button.auditorRecord = See the auditor records
 auditor.job.form.button.create = Create job

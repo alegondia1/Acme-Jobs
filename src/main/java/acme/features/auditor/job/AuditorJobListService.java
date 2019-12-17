@@ -52,7 +52,11 @@ public class AuditorJobListService implements AbstractListService<Auditor, Job> 
 		if (mode.equals("mine")) {
 			result = this.repository.findManyJobByAuditorId(principal.getActiveRoleId());
 		} else if (mode.equals("other")) {
-			result = this.repository.findManyJobByAuditorIdNot(principal.getActiveRoleId());
+			Collection<Job> jobs = this.repository.findManyJob();
+			Collection<Job> myJobs = this.repository.findManyJobByAuditorId(principal.getActiveRoleId());
+			jobs.removeAll(myJobs);
+			result = jobs;
+
 		} else {
 			result = new ArrayList<Job>();
 		}

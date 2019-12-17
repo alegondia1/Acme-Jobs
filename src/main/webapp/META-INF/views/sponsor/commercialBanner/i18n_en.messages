@@ -17,6 +17,7 @@ sponsor.commercialBanner.form.label.slogan = Slogan
 sponsor.commercialBanner.form.label.card = Credit Card
 sponsor.commercialBanner.form.label.username = Sponsor
 
+sponsor.banner.form.label.isspam = Contains words considered spam
 sponsor.commercialBanner.form.button.update = Update
 sponsor.commercialBanner.form.button.delete = Delete
 sponsor.commercialBanner.form.button.create = Create

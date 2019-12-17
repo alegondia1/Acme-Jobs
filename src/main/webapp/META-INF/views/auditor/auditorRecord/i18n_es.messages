@@ -17,5 +17,7 @@ auditor.auditorRecord.form.label.moment = Fecha
 auditor.auditorRecord.form.label.body = Cuerpo
 auditor.auditorRecord.form.label.username = Nombre del usuario
 auditor.auditorRecord.form.label.job = Titulo del trabajo
-	
+auditor.auditorRecord.form.label.status = Publicado
+auditor.auditorRecord.form.button.create = Crear
+auditor.auditorRecord.form.button.update = Actualizar
 auditor.auditorRecord.form.button.return = Volver

@@ -8,6 +8,7 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import acme.entities.customizationParameters.CustomizationParameters;
 import acme.entities.messageThread.Message;
@@ -104,11 +105,13 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 
 	private Boolean check(final String data) {
 		Boolean result = false;
+		long count;
 		CustomizationParameters customizationParameter;
 		customizationParameter = this.spamRepository.find();
-		//Double threeshold = customizationParameter.getSpamThreshold();
+		Double threeshold = customizationParameter.getSpamThreshold();
 		Collection<String> spamwords = customizationParameter.getSpamWords();
-		result = spamwords.stream().anyMatch(X -> data.toLowerCase().contains(X));
+		count = spamwords.stream().mapToLong(X -> StringUtils.countOccurrencesOf(data, X)).sum();
+		result = count >= threeshold;
 		return result;
 	}
 

@@ -1,0 +1,33 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not job any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+worker.job.list.label.deadline = Finalizacion
+worker.job.list.label.reference = Numero de referencia
+worker.job.list.label.salary = Salario
+worker.job.list.label.title = Titulo
+
+
+worker.job.form.button.auditorRecord = Ver los registror de auditor
+worker.job.form.button.return = Volver
+worker.job.form.label.salary = Salario
+worker.job.form.label.deadline = Finalizacion
+worker.job.form.label.title = Titulo
+worker.job.form.label.reference = Numero de referencia
+worker.job.form.label.moreInfo = Mas informacion
+worker.job.form.label.status = ¿Publicado?
+worker.job.form.label.employer = Empleado
+worker.job.form.label.accept = Acepto que mi oferta una vez creada no podra ser ni eliminada ni modificada
+worker.job.form.label.unique = El ticker debe ser unico
+worker.job.form.label.reward.error = La recompensa debe estar en EUR
+worker.job.form.label.deadline.error = La fecha debe ser en futuro
+worker.job.form.label.accept = Debe aceptar las condiciones
+worker.job.form.button.descriptor= Informacion de Descriptor
+worker.job.form.button.application = Solicitar este trabajo
+worker.job.form.button.create = Crear oferta

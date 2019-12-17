@@ -10,8 +10,11 @@ worker.application.form.label.statements = Statements
 worker.application.form.label.status = Status
 worker.application.form.label.justification.reason = Reason
 worker.application.form.label.app = Application
+worker.application.form.label.already = You have already requested this job
+worker.application.form.label.notreference = Must be four letters
 worker.application.form.label.button.justification = See justification of rejection
-
+worker.application.form.label.notunique = The reference already exists
+worker.application.form.label.button.create = Apply
 worker.application.form.label.worker = Worker
 worker.application.form.label.job = Job
 worker.application.form.button.return = Return
