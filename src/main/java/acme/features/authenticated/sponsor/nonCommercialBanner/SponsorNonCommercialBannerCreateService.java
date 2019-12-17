@@ -1,5 +1,5 @@
 
-package acme.features.sponsor.nonCommercialBanner;
+package acme.features.authenticated.sponsor.nonCommercialBanner;
 
 import java.util.Collection;
 
@@ -11,15 +11,17 @@ import acme.entities.nonCommercialBanner.NonCommercialBanner;
 import acme.entities.roles.Sponsor;
 import acme.features.administrator.customization.AdministratorCustomizationParametersRepository;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
-import acme.framework.services.AbstractUpdateService;
+import acme.framework.helpers.PrincipalHelper;
+import acme.framework.services.AbstractCreateService;
 
 @Service
-public class SponsorNonCommercialBannerUpdateService implements AbstractUpdateService<Sponsor, NonCommercialBanner> {
+public class SponsorNonCommercialBannerCreateService implements AbstractCreateService<Sponsor, NonCommercialBanner> {
 
-	//Internal State -----------------------------
+	//Internal State ----------------------------
 	@Autowired
 	SponsorNonCommercialBannerRepository			repository;
 	@Autowired
@@ -29,18 +31,7 @@ public class SponsorNonCommercialBannerUpdateService implements AbstractUpdateSe
 	@Override
 	public boolean authorise(final Request<NonCommercialBanner> request) {
 		assert request != null;
-		boolean result;
-		int sponsorID;
-		Sponsor sponsor;
-
-		Principal pricipal;
-
-		sponsorID = request.getModel().getInteger("id");
-		sponsor = this.repository.findSponsorByNonCommercialBannerId(sponsorID);
-
-		pricipal = request.getPrincipal();
-		result = sponsor.getId() == pricipal.getActiveRoleId();
-		return result;
+		return true;
 	}
 
 	@Override
@@ -59,18 +50,27 @@ public class SponsorNonCommercialBannerUpdateService implements AbstractUpdateSe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "picture", "slogan", "url", "jingle", "sponsor");
+		request.unbind(entity, model, "url", "picture", "slogan", "jingle", "sponsor");
+
 	}
 
 	@Override
-	public NonCommercialBanner findOne(final Request<NonCommercialBanner> request) {
-		assert request != null;
-
+	public NonCommercialBanner instantiate(final Request<NonCommercialBanner> request) {
 		NonCommercialBanner result = new NonCommercialBanner();
-		int id;
 
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		Principal principal;
+		Sponsor sponsor;
+
+		int sponsorID;
+		principal = request.getPrincipal();
+		sponsorID = principal.getActiveRoleId();
+		sponsor = this.repository.findSponsorById(sponsorID);
+
+		result.setPicture("https://www.url-de-ejemplo.com");
+		result.setSlogan("Texto de ejemplo");
+		result.setUrl("https://www.url-de-ejemplo.com");
+		result.setJingle("Jingle de ejemplo");
+		result.setSponsor(sponsor);
 		return result;
 	}
 
@@ -99,12 +99,22 @@ public class SponsorNonCommercialBannerUpdateService implements AbstractUpdateSe
 	}
 
 	@Override
-	public void update(final Request<NonCommercialBanner> request, final NonCommercialBanner entity) {
+	public void create(final Request<NonCommercialBanner> request, final NonCommercialBanner entity) {
 		assert request != null;
 		assert entity != null;
 
 		this.repository.save(entity);
 
+	}
+
+	@Override
+	public void onSuccess(final Request<Sponsor> request, final Response<Sponsor> response) {
+		assert request != null;
+		assert response != null;
+
+		if (request.isMethod(HttpMethod.POST)) {
+			PrincipalHelper.handleUpdate();
+		}
 	}
 
 }

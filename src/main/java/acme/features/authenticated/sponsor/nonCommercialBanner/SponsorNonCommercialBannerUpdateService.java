@@ -1,5 +1,5 @@
 
-package acme.features.sponsor.nonCommercialBanner;
+package acme.features.authenticated.sponsor.nonCommercialBanner;
 
 import java.util.Collection;
 
@@ -11,9 +11,11 @@ import acme.entities.nonCommercialBanner.NonCommercialBanner;
 import acme.entities.roles.Sponsor;
 import acme.features.administrator.customization.AdministratorCustomizationParametersRepository;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
+import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
@@ -105,6 +107,16 @@ public class SponsorNonCommercialBannerUpdateService implements AbstractUpdateSe
 
 		this.repository.save(entity);
 
+	}
+
+	@Override
+	public void onSuccess(final Request<Sponsor> request, final Response<Sponsor> response) {
+		assert request != null;
+		assert response != null;
+
+		if (request.isMethod(HttpMethod.POST)) {
+			PrincipalHelper.handleUpdate();
+		}
 	}
 
 }

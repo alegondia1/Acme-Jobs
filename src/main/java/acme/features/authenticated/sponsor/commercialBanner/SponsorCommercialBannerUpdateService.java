@@ -1,34 +1,37 @@
 
-package acme.features.sponsor.nonCommercialBanner;
+package acme.features.authenticated.sponsor.commercialBanner;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.commercialBanner.CommercialBanner;
 import acme.entities.customizationParameters.CustomizationParameters;
-import acme.entities.nonCommercialBanner.NonCommercialBanner;
 import acme.entities.roles.Sponsor;
 import acme.features.administrator.customization.AdministratorCustomizationParametersRepository;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
+import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class SponsorNonCommercialBannerUpdateService implements AbstractUpdateService<Sponsor, NonCommercialBanner> {
+public class SponsorCommercialBannerUpdateService implements AbstractUpdateService<Sponsor, CommercialBanner> {
 
 	//Internal State -----------------------------
 	@Autowired
-	SponsorNonCommercialBannerRepository			repository;
+	SponsorCommercialBannerRepository				repository;
 	@Autowired
 	AdministratorCustomizationParametersRepository	spamRepository;
 
 
 	@Override
-	public boolean authorise(final Request<NonCommercialBanner> request) {
+	public boolean authorise(final Request<CommercialBanner> request) {
 		assert request != null;
+
 		boolean result;
 		int sponsorID;
 		Sponsor sponsor;
@@ -36,15 +39,16 @@ public class SponsorNonCommercialBannerUpdateService implements AbstractUpdateSe
 		Principal pricipal;
 
 		sponsorID = request.getModel().getInteger("id");
-		sponsor = this.repository.findSponsorByNonCommercialBannerId(sponsorID);
+		sponsor = this.repository.findSponsorByCommercialBannerId(sponsorID);
 
 		pricipal = request.getPrincipal();
 		result = sponsor.getId() == pricipal.getActiveRoleId();
 		return result;
+
 	}
 
 	@Override
-	public void bind(final Request<NonCommercialBanner> request, final NonCommercialBanner entity, final Errors errors) {
+	public void bind(final Request<CommercialBanner> request, final CommercialBanner entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -54,19 +58,19 @@ public class SponsorNonCommercialBannerUpdateService implements AbstractUpdateSe
 	}
 
 	@Override
-	public void unbind(final Request<NonCommercialBanner> request, final NonCommercialBanner entity, final Model model) {
+	public void unbind(final Request<CommercialBanner> request, final CommercialBanner entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "picture", "slogan", "url", "jingle", "sponsor");
+		request.unbind(entity, model, "picture", "slogan", "url", "card", "sponsor");
 	}
 
 	@Override
-	public NonCommercialBanner findOne(final Request<NonCommercialBanner> request) {
+	public CommercialBanner findOne(final Request<CommercialBanner> request) {
 		assert request != null;
 
-		NonCommercialBanner result = new NonCommercialBanner();
+		CommercialBanner result = new CommercialBanner();
 		int id;
 
 		id = request.getModel().getInteger("id");
@@ -75,17 +79,17 @@ public class SponsorNonCommercialBannerUpdateService implements AbstractUpdateSe
 	}
 
 	@Override
-	public void validate(final Request<NonCommercialBanner> request, final NonCommercialBanner entity, final Errors errors) {
+	public void validate(final Request<CommercialBanner> request, final CommercialBanner entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		boolean accept = false;
 		accept = request.getModel().getBoolean("accept");
 
 		errors.state(request, accept, "accept", "authenticated.message.form.label.accept");
 		errors.state(request, !this.check(entity.getSlogan()), "slogan", "authenticated.message.form.label.isspam");
-		errors.state(request, !this.check(entity.getJingle()), "jingle", "authenticated.message.form.label.isspam");
-		errors.state(request, !this.check(entity.getUrl()), "url", "authenticated.message.form.label.isspam");
 		errors.state(request, !this.check(entity.getPicture()), "picture", "authenticated.message.form.label.isspam");
+		errors.state(request, !this.check(entity.getUrl()), "url", "authenticated.message.form.label.isspam");
 
 	}
 	private Boolean check(final String data) {
@@ -99,12 +103,22 @@ public class SponsorNonCommercialBannerUpdateService implements AbstractUpdateSe
 	}
 
 	@Override
-	public void update(final Request<NonCommercialBanner> request, final NonCommercialBanner entity) {
+	public void update(final Request<CommercialBanner> request, final CommercialBanner entity) {
 		assert request != null;
 		assert entity != null;
 
 		this.repository.save(entity);
 
+	}
+
+	@Override
+	public void onSuccess(final Request<Sponsor> request, final Response<Sponsor> response) {
+		assert request != null;
+		assert response != null;
+
+		if (request.isMethod(HttpMethod.POST)) {
+			PrincipalHelper.handleUpdate();
+		}
 	}
 
 }

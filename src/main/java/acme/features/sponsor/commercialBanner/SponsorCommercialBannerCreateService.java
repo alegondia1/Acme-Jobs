@@ -82,9 +82,9 @@ public class SponsorCommercialBannerCreateService implements AbstractCreateServi
 		accept = request.getModel().getBoolean("accept");
 
 		errors.state(request, accept, "accept", "authenticated.message.form.label.accept");
-		errors.state(request, !this.check(entity.getSlogan), "slogan", "authenticated.message.form.label.isspam");
-		errors.state(request, !this.check(entity.getPicture), "picture", "authenticated.message.form.label.isspam");
-		errors.state(request, !this.check(entity.getUrl), "url", "authenticated.message.form.label.isspam");
+		errors.state(request, !this.check(entity.getSlogan()), "slogan", "authenticated.message.form.label.isspam");
+		errors.state(request, !this.check(entity.getPicture()), "picture", "authenticated.message.form.label.isspam");
+		errors.state(request, !this.check(entity.getUrl()), "url", "authenticated.message.form.label.isspam");
 
 	}
 	private Boolean check(final String data) {
