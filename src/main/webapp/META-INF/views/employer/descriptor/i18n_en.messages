@@ -16,6 +16,7 @@ employer.duty.form.label.percentaje = Percentaje
 employer.duty.list.label.title = Title
 employer.duty.list.label.percentaje = Percentaje
 
+employer.descriptor.form.label.negative = Percentaje must be positive
 employer.descriptor.form.label.percentajenumber = Percentaje must be a number
 employer.descriptor.form.label.notblank = Description and title must not be blank
 employer.descriptor.adddutys = Add duty

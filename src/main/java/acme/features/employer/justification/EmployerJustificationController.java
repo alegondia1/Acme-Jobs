@@ -1,5 +1,5 @@
 
-package acme.features.employer.application;
+package acme.features.employer.justification;
 
 import javax.annotation.PostConstruct;
 

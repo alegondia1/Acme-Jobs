@@ -2,6 +2,7 @@
 package acme.features.employer.job;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,7 +51,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "title", "deadline");
-		request.unbind(entity, model, "salary", "moreInfo", "status", "employer", "descriptor");
+		request.unbind(entity, model, "salary", "moreInfo", "status", "employer.userAccount.username", "descriptor");
 
 	}
 
@@ -63,7 +64,14 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		int id;
 
 		id = request.getModel().getInteger("id");
-		errors.state(request, entity.getSalary().getCurrency().equals("EUR"), "salary", "employer.job.form.label.salary.error");
+		if (entity.getSalary() != null) {
+			errors.state(request, entity.getSalary().getAmount() >= 0, "salary", "employer.job.form.label.salary.negative");
+			errors.state(request, entity.getSalary().getCurrency().equals("EUR"), "salary", "employer.job.form.label.salary.error");
+		}
+		Date moment = new Date(System.currentTimeMillis());
+		if (entity.getDeadline() != null) {
+			errors.state(request, entity.getDeadline().after(moment), "deadline", "employer.job.form.label.future");
+		}
 		Collection<Job> references = this.repository.findManyAll();
 		errors.state(request, !references.stream().anyMatch(X -> X.getReference().equals(entity.getReference()) && !(X.getId() == entity.getId())), "reference", "employer.job.form.label.unique");
 		descriptor = this.repository.findDescriptorByJobId(id);

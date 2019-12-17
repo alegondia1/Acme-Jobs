@@ -1,5 +1,5 @@
 
-package acme.features.employer.application;
+package acme.features.employer.justification;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,6 +8,7 @@ import acme.entities.application.Application;
 import acme.entities.jobs.Job;
 import acme.entities.justification.Justification;
 import acme.entities.roles.Employer;
+import acme.features.employer.application.EmployerApplicationRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;

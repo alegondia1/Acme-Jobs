@@ -13,10 +13,8 @@
 	<jstl:if test="${command != 'create'}">
 	<acme:form-checkbox code="employer.job.form.label.status" readonly="true" path="status"/>
 	</jstl:if>
-	<div class="form-group" >
-	<label><acme:message code="employer.job.form.label.employer"/></label>
-	<input readonly="readonly" type="text" class="form-control" value="${employer.userAccount.username}"> 
-	</div>
+	<acme:form-textbox code="employer.job.form.label.employer" readonly="true" path="employer.userAccount.username"/>
+
 	<acme:form-submit test="${command != 'create' && status==true && command != 'update' || descriptor != null}" code="employer.job.form.button.descriptor" method="get" action="/employer/descriptor/show?jobid=${id}"/>
 	<acme:form-submit test="${command != 'create' && status==true && command != 'update'}" code="employer.job.form.button.auditorRecord" method="get" action="/authenticated/auditor-record/list?id=${id}"/>
 	<acme:form-submit test="${command != 'create' && status==true && command != 'update'}" code="employer.job.form.button.application" method="get" action="/employer/application/list?id=${id}"/>
@@ -39,10 +37,8 @@
 	<jstl:if test="${command != 'create'}">
 	<acme:form-checkbox code="employer.job.form.label.status" path="status"/>
 	</jstl:if>
-	<div class="form-group" >
-	<label><acme:message code="employer.job.form.label.employer"/></label>
-	<input readonly="readonly" type="text" class="form-control" value="${employer.userAccount.username}"> 
-	</div>
+	<acme:form-textbox code="employer.job.form.label.employer" readonly="true" path="employer.userAccount.username"/>
+
 	<acme:form-submit test="${command != 'create' && command != 'delete' && descriptor == null && descriptorBoolean==false}" code="employer.job.form.button.descriptor.create" method="get" action="/employer/descriptor/create?jobid=${id}"/>
 	<acme:form-submit test="${command != 'create' && status==true && command != 'update' || descriptor != null  || descriptorBoolean==true}" code="employer.job.form.button.descriptor" method="get" action="/employer/descriptor/show?jobid=${id}"/>
 	<acme:form-submit test="${command != 'create' && status==true && command != 'update'}" code="employer.job.form.button.auditorRecord" method="get" action="/authenticated/auditor-record/list?id=${id}"/>

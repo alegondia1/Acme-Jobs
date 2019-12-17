@@ -48,7 +48,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "title", "deadline");
-		request.unbind(entity, model, "salary", "moreInfo", "status", "employer", "descriptor");
+		request.unbind(entity, model, "salary", "moreInfo", "status", "employer.userAccount.username", "descriptor");
 
 	}
 
@@ -83,10 +83,16 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		errors.state(request, entity.getSalary().getCurrency().equals("EUR"), "salary", "employer.job.form.label.salary.error");
+		if (entity.getSalary() != null) {
+			errors.state(request, entity.getSalary().getAmount() >= 0, "salary", "employer.job.form.label.salary.negative");
+			errors.state(request, entity.getSalary().getCurrency().equals("EUR"), "salary", "employer.job.form.label.salary.error");
+		}
 		Collection<String> references = this.repository.findManyAllReference();
 		errors.state(request, !references.stream().anyMatch(X -> X.equals(entity.getReference())), "reference", "employer.job.form.label.unique");
-
+		Date moment = new Date(System.currentTimeMillis());
+		if (entity.getDeadline() != null) {
+			errors.state(request, entity.getDeadline().after(moment), "deadline", "employer.job.form.label.future");
+		}
 	}
 
 	@Override

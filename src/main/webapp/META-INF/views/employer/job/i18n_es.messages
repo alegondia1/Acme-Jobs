@@ -13,6 +13,10 @@ employer.job.list.label.reference = Numero de referencia
 employer.job.list.label.salary = Salario
 employer.job.list.label.title = Titulo
 
+
+employer.job.form.label.future = Debe ser futura
+employer.job.form.label.salary.negative = Debe ser positivo
+employer.job.form.label.notblanck = No debe estar en blanco
 employer.job.form.label.isspam = No se puede publicar, hay palabras consideradas spam en tu trabajo
 employer.job.form.button.descriptor.create = Crear descriptor
 employer.job.form.label.nodelete = No puedes eliminarlo si ya tienes solicitudes para este trabajo

@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.messageThread;
+package acme.features.authenticated.message;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,6 +14,7 @@ import acme.entities.customizationParameters.CustomizationParameters;
 import acme.entities.messageThread.Message;
 import acme.entities.messageThread.MessageThread;
 import acme.features.administrator.customization.AdministratorCustomizationParametersRepository;
+import acme.features.authenticated.messageThread.AuthenticatedMessageThreadRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;

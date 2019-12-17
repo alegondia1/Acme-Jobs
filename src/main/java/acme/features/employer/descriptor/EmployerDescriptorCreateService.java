@@ -95,7 +95,17 @@ public class EmployerDescriptorCreateService implements AbstractCreateService<Em
 				if (!(title.isEmpty() || description.isEmpty())) {
 					if (this.isNumeric(request.getModel().getAttribute("percentaje" + i).toString())) {
 						Double perc = Double.parseDouble(request.getModel().getAttribute("percentaje" + i).toString().replace(",", "."));
+						if (perc < 0) {
+							errors.state(request, false, "dutys", "employer.descriptor.form.label.negative");
+						}
 						percentaje = percentaje + perc;
+						Duty duty = new Duty();
+						duty.setDescription(description);
+						duty.setPercentaje(perc);
+						duty.setTitle(title);
+						Collection<Duty> dutys = entity.getDutys();
+						dutys.add(duty);
+						request.getModel().setAttribute("dutys", dutys);
 					} else {
 						errors.state(request, false, "dutys", "employer.descriptor.form.label.percentajenumber");
 						cont = false;

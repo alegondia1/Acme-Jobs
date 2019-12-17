@@ -48,7 +48,7 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 			model.setAttribute("descriptorBoolean", false);
 		}
 		request.unbind(entity, model, "reference", "title", "deadline");
-		request.unbind(entity, model, "salary", "moreInfo", "status", "employer", "descriptor");
+		request.unbind(entity, model, "salary", "moreInfo", "status", "employer.userAccount.username", "descriptor");
 
 	}
 

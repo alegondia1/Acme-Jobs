@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.messageThread;
+package acme.features.authenticated.userInvolved;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.messageThread.MessageThread;
 import acme.entities.messageThread.UserInvolved;
+import acme.features.authenticated.messageThread.AuthenticatedMessageThreadRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;

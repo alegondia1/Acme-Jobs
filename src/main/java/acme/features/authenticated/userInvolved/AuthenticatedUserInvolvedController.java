@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.messageThread;
+package acme.features.authenticated.userInvolved;
 
 import javax.annotation.PostConstruct;
 

@@ -16,6 +16,7 @@ employer.duty.form.label.percentaje = Porcentaje
 employer.duty.list.label.title = Titulo
 employer.duty.list.label.percentaje = Porcentaje
 
+employer.descriptor.form.label.negative = El porcentaje debe ser psoitivo
 employer.descriptor.form.label.percentajenumber = El porcentaje debe ser un numero
 employer.descriptor.form.label.notblank = La descripcion y el titulo no pueden estar en blanco
 employer.descriptor.adddutys = Añadir tarea

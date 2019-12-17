@@ -5,7 +5,9 @@ employer.job.list.label.reference = Reference number
 employer.job.list.label.salary = Salary
 employer.job.list.label.title = Title
 
-
+employer.job.form.label.future = Must be in future
+employer.job.form.label.salary.negative = Must be positive
+employer.job.form.label.notblanck = Must not be blank
 employer.job.form.label.isspam = You cannot publish, there are words considered spam in your job
 employer.job.form.button.descriptor.create = Create descriptor
 employer.job.form.label.nodelete = You can't delete if you have applications in this job
