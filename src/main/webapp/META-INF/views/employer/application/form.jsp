@@ -18,5 +18,6 @@
 	<label><acme:message code="employer.application.form.label.job"/></label>
 	<input readonly="readonly" type="text" class="form-control" value="${job.title}"> 
 	</div>
+
 	<acme:form-return code="employer.application.form.button.return"/>
 </acme:form>

@@ -11,7 +11,7 @@ worker.application.form.label.status = Status
 worker.application.form.label.justification.reason = Reason
 worker.application.form.label.app = Application
 worker.application.form.label.button.justification = See justification of rejection
-
+worker.application.form.label.button.accept= Accept
 worker.application.form.label.worker = Worker
 worker.application.form.label.job = Job
 worker.application.form.button.return = Return

@@ -25,6 +25,7 @@
 	<acme:form-submit test="${command == 'create'}" code="employer.job.form.button.create" action="/employer/job/create"/>
 	<acme:form-submit test="${command == 'update'}" code="employer.job.form.button.update" action="/employer/job/update"/>
 	<acme:form-submit test="${command == 'delete'}" code="employer.job.form.button.delete" action="/employer/job/delete"/>
+
 	<acme:form-return code="employer.job.form.button.return"/>
 </acme:form>
 </jstl:if>
@@ -47,6 +48,7 @@
 	<acme:form-submit test="${command != 'create' && status==true && command != 'update' || descriptor != null  || descriptorBoolean==true}" code="employer.job.form.button.descriptor" method="get" action="/employer/descriptor/show?jobid=${id}"/>
 	<acme:form-submit test="${command != 'create' && status==true && command != 'update'}" code="employer.job.form.button.auditorRecord" method="get" action="/authenticated/auditor-record/list?id=${id}"/>
 	<acme:form-submit test="${command != 'create' && status==true && command != 'update'}" code="employer.job.form.button.application" method="get" action="/employer/application/list?id=${id}"/>
+	
 	
 	<acme:form-submit test="${command == 'show' && status==false}" code="employer.job.form.button.update" action="/employer/job/update"/>
 	<acme:form-submit test="${command == 'show'}" code="employer.job.form.button.delete" action="/employer/job/delete"/>

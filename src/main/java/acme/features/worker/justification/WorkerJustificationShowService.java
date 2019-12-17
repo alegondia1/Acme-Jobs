@@ -43,7 +43,7 @@ public class WorkerJustificationShowService implements AbstractShowService<Worke
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findJustificationByApplicationId(id);
+		result = this.repository.findOneById(id);
 
 		return result;
 	}

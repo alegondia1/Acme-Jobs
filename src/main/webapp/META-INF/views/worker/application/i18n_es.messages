@@ -12,7 +12,7 @@ worker.application.form.label.status = Estado
 worker.application.form.label.justification.reason = Razones
 worker.application.form.label.app = Solicitud
 worker.application.form.label.button.justification = Ver justificación del rechazo
-
+worker.application.form.label.button.accept=Aceptar
 worker.application.form.label.worker = Trabajador
 worker.application.form.label.job = Trabajo
 worker.application.form.button.return = Volver

@@ -1,6 +1,8 @@
 
 package acme.features.worker.justification;
 
+import java.util.Collection;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -15,4 +17,7 @@ public interface WorkerJustificationRepository extends AbstractRepository {
 
 	@Query("select a from Justification a where a.application.id = ?1")
 	Justification findJustificationByApplicationId(int id);
+	@Query("select a from Justification a where a.justification.id = ?1")
+	Collection<Justification> findManyByJustificationId(int id);
+
 }

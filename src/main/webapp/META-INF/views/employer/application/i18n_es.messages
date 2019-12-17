@@ -11,4 +11,6 @@ employer.application.form.label.status = Estado
 
 employer.application.form.label.worker = Trabajador
 employer.application.form.label.job = Trabajo
+employer.job.form.button.accept= Aceptar
+employer.job.form.button.reject= Rechazar
 employer.application.form.button.return = Volver

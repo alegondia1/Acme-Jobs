@@ -18,6 +18,8 @@
 	<label><acme:message code="worker.application.form.label.job"/></label>
 	<input readonly="readonly" type="text" class="form-control" value="${job.title}"> 
 	</div>
+	
+	<acme:form-submit test="${command != 'create' && status==true && command != 'update'}" code="worker.application.form.label.button.accept" method="get" action="/worker/justification/list?id=${id}"/>
 	<acme:form-submit test="${status == 'REJECTED'}" code="worker.application.form.label.button.justification" method="get" action="/worker/justification/show?id=${id}"/>
 	<acme:form-return code="worker.application.form.button.return"/>
 </acme:form>

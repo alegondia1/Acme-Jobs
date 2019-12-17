@@ -31,5 +31,6 @@ employer.job.form.button.descriptor= Descriptor Information
 employer.job.form.button.delete = Delete
 employer.job.form.button.update = Update
 
+
 employer.job.form.button.auditorRecord = See the auditor records
 employer.job.form.button.create = Create job

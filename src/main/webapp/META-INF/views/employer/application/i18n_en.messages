@@ -11,4 +11,6 @@ employer.application.form.label.status = Status
 
 employer.application.form.label.worker = Worker
 employer.application.form.label.job = Job
+employer.job.form.button.accept= Accept
+employer.job.form.button.reject= Reject
 employer.application.form.button.return = Return
