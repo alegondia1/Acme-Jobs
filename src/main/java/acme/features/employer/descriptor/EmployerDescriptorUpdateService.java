@@ -83,7 +83,7 @@ public class EmployerDescriptorUpdateService implements AbstractUpdateService<Em
 				String title = request.getModel().getString("title" + i);
 				String description = request.getModel().getString("description" + i);
 				if (!(title.isEmpty() || description.isEmpty())) {
-					if (this.isNumeric(request.getModel().getAttribute("percentaje" + i).toString())) {
+					if (this.isNumeric(request.getModel().getAttribute("percentaje" + i).toString().replace(",", "."))) {
 						Double perc = Double.parseDouble(request.getModel().getAttribute("percentaje" + i).toString().replace(",", "."));
 						if (perc < 0) {
 							errors.state(request, false, "dutys", "employer.descriptor.form.label.negative");
