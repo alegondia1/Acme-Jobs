@@ -15,7 +15,7 @@
   	</thead>
   	<tbody>
 	<jstl:forEach var="entry" items="${dutys}">
-	<tr onclick="location.href='../acme-jobs/authenticated/duty/show?id=${entry.id}'">
+	<tr onclick="location.href='../authenticated/duty/show?id=${entry.id}'">
 		<td><acme:message code="${entry.title}"/></td>
 		<td><acme:message code="${entry.percentaje}"/></td>
 	</tr>

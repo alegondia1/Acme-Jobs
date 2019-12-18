@@ -16,7 +16,7 @@
   	</thead>
   	<tbody>
 	<jstl:forEach var="entry" items="${messages}">
-	<tr onclick="location.href='../acme-jobs/authenticated/message/show?id=${entry.id}&threadid=${id}'">
+	<tr onclick="location.href='../authenticated/message/show?id=${entry.id}&threadid=${id}'">
 		<td><acme:message code="${entry.title}"/></td>
 		<td><acme:message code="${entry.moment}"/></td>
 	</tr>
