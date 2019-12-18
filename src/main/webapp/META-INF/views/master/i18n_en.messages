@@ -116,6 +116,8 @@ master.menu.user-account.become-worker = Become worker
 master.menu.user-account.worker = Worker data
 master.menu.user-account.become-auditor = Request to become auditor
 master.menu.user-account.auditor = Auditor data
+master.menu.user-account.become-sponsor = Become sponsor
+master.menu.user-account.sponsor = Sponsor data
 
 # master.menu.isAutentificated ####################################################
 

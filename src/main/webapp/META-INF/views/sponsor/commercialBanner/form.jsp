@@ -8,10 +8,7 @@
 	<acme:form-textbox code="sponsor.commercialBanner.form.label.picture" path="picture"/>
 	<acme:form-textbox code="sponsor.commercialBanner.form.label.slogan" path="slogan"/>
 	<acme:form-textbox code="sponsor.commercialBanner.form.label.card" readonly="true" path="card"/>
-	<div class="form-group" >
-	<label><acme:message code="sponsor.commercialBanner.form.label.username"/></label>
-	<input readonly="readonly" type="text" class="form-control" value="${sponsor.userAccount.username}"> 
-	</div>
+	<acme:form-textbox code="sponsor.commercialBanner.form.label.username" readonly="true" path="sponsor.userAccount.username"/>
 
 	
     <acme:form-submit test="${command == 'show'}" code="sponsor.commercialBanner.form.button.update" action="/sponsor/commercial-banner/update"/>

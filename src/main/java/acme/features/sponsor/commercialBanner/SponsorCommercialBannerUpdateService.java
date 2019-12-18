@@ -62,7 +62,7 @@ public class SponsorCommercialBannerUpdateService implements AbstractUpdateServi
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "picture", "slogan", "url", "card", "sponsor");
+		request.unbind(entity, model, "picture", "slogan", "url", "card", "sponsor.userAccount.username");
 	}
 
 	@Override

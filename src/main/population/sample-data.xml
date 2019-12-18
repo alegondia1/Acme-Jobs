@@ -68,7 +68,7 @@
 
 	<bean name="sponsor1Sponsor" class="acme.entities.roles.Sponsor">
 		<property name="name" value="Sponsor ej 1" />
-		<property name="creditCard" value="123456AX" />
+		<property name="creditCard" value="5188893404505068" />
 		<property name="userAccount" ref="sponsor1UserAccount" />
 	</bean>
 	
@@ -469,7 +469,7 @@
 		<property name="picture" value="https://www.ofrendavirgendelpilar.com/wp-content/uploads/2018/09/rosa-roja-ofrenda.jpg"/>
 		<property name="slogan" value="Flowers"/>
 		<property name="url" value="https://www.flores.com"/>
-		<property name="card" value="1111111111111111"/>
+		<property name="card" value="5188893404505068"/>
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		</bean>
 	

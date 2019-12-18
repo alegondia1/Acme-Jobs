@@ -49,7 +49,7 @@ public class SponsorCommercialBannerCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "url", "picture", "slogan", "card", "sponsor");
+		request.unbind(entity, model, "url", "picture", "slogan", "card", "sponsor.userAccount.username");
 
 	}
 

@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.CreditCardNumber;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.roles.Sponsor;
@@ -37,6 +38,7 @@ public class CommercialBanner extends DomainEntity {
 	private String				url;
 
 	@NotBlank
+	@CreditCardNumber
 	private String				card;
 
 	//Relationships
