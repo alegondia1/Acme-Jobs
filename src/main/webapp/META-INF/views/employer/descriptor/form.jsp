@@ -60,13 +60,15 @@
 	
 	<acme:form-return code="employer.descriptor.form.button.return"/>
 </acme:form>
+
 </jstl:if>
 <script>
 function include(){
-	var el = document.getElementById("count");
-	var html =  '../newDutys.jsp?count='+ el.value;
+	var el = document.getElementById("count")
+	var html =  'newDutys.jsp?count='+ el.value;
 	$('#form_sample').append($("<div>").load(html));
 	el.value = parseInt(el.value)+1;
 	
 }
+<
 </script>
