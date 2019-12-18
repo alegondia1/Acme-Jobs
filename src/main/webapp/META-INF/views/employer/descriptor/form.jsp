@@ -64,7 +64,7 @@
 <script>
 function include(){
 	var el = document.getElementById("count");
-	var html =  '../images/newDutys.jsp?count='+ el.value;
+	var html =  '../employer/descriptor/newDutys.jsp?count='+ el.value;
 	$('#form_sample').append($("<div>").load(html));
 	el.value = parseInt(el.value)+1;
 	
