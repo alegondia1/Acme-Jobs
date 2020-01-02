@@ -385,7 +385,7 @@
 
 <bean id="challenge02" class="acme.entities.challenge.Challenge">
 	<property name="title" value="Sample challenge 02" />
-	<property name="deadline" value="2019/12/05 00:00" />
+	<property name="deadline" value="2020/12/05 00:00" />
 	<property name="description" value="Post as many announcements as possible to receive a prize!" />
 	<property name="goalBronze" value="Post 5 announcements!" />
 	<property name="rewardBronze" value="1 day premium" />
@@ -515,7 +515,7 @@
 	<bean id="Request01" class="acme.entities.request.Request">
 		<property name="title" value="Titulo01"/>
 		<property name="moment" value="2019/10/27 10:10"/>
-		<property name="deadline" value="2019/12/27 10:10"/>
+		<property name="deadline" value="2020/12/27 10:10"/>
 		<property name="description" value="Esta es una descripción de prueba"/>
 		<property name="reward" value="EUR 501.2"/>
 		<property name="ticker" value="RABCD-91234"/>
