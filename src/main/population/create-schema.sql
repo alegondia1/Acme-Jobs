@@ -80,6 +80,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `challenge_test` (
+       `id` integer not null,
+        `version` integer not null,
+        `more_info2` varchar(255),
+        `p_text` varchar(255),
+        `job_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `commercial_banner` (
        `id` integer not null,
         `version` integer not null,
@@ -323,6 +332,9 @@ create index IDX5wwxv107kvi5si12nh4226lnx on `application` (`moment`, `status`);
     alter table `application` 
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
 
+    alter table `challenge_test` 
+       add constraint UK_5ilfn1qqsku4lndis0f3bfadc unique (`job_id`);
+
     alter table `descriptor_duty` 
        add constraint UK_gicb7at1idsamnu3xgj4i91vc unique (`dutys_id`);
 create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
@@ -386,6 +398,11 @@ create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `challenge_test` 
+       add constraint `FK3nupxtb0v0in3aggts4d33cyi` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
 
     alter table `commercial_banner` 
        add constraint `FKd0k52g7lcacefcp62kb4p9aor` 

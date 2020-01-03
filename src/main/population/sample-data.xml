@@ -692,6 +692,7 @@
 		<property name="salary" value="EUR 501.2"/>
 		<property name="employer" ref="employer1Employer"/>
 		<property name="descriptor" ref="Descriptor01"/>
+		<property name="challengeTest" ref="CTest1"/>
 	</bean>
 	<bean id="Job02" class="acme.entities.jobs.Job">
 		<property name="title" value="Titulo02"/>
@@ -968,4 +969,10 @@
 		<property name="reason" value="No me gusta esta peticion 2"/>
 		<property name="application" ref="Application06"/>
 	</bean>
+	<!-- CHALLENGETEST -->
+	<bean id="CTest1" class="acme.entities.challengeTest.ChallengeTest">
+		<property name="pText" value="Hola"/>
+		<property name="moreInfo2" value="hola otra ve"/>
+		<property name="job" ref="Job01"/>
+		</bean>
 </beans>

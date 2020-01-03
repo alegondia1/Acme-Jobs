@@ -31,6 +31,10 @@
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
 
+    alter table `challenge_test` 
+       drop 
+       foreign key `FK3nupxtb0v0in3aggts4d33cyi`;
+
     alter table `commercial_banner` 
        drop 
        foreign key `FKd0k52g7lcacefcp62kb4p9aor`;
@@ -126,6 +130,8 @@
     drop table if exists `authenticated`;
 
     drop table if exists `challenge`;
+
+    drop table if exists `challenge_test`;
 
     drop table if exists `commercial_banner`;
 

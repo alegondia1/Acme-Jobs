@@ -29,4 +29,5 @@ authenticated.job.form.label.reward.error = La recompensa debe estar en EUR
 authenticated.job.form.label.deadline.error = La fecha debe ser en futuro
 authenticated.job.form.label.accept = Debe aceptar las condiciones
 authenticated.job.form.button.descriptor= Informacion de Descriptor
+authenticated.job.form.button.challengeTest= Challenge Information
 authenticated.job.form.button.create = Crear oferta

@@ -10,12 +10,28 @@
 	<acme:form-textarea code="authenticated.job.form.label.reference" path="reference"/>
 	<acme:form-textbox code="authenticated.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-checkbox code="authenticated.job.form.label.status" path="status"/>
+	
+	<acme:check-access test="${hasControlCheck}">
+	<acme:form-textbox code="authenticated.job.form.label.pText" path="pText"/>
+	<acme:form-textbox code="authenticated.job.form.label.moreInfo2" path="moreInfo2"/>
+	</acme:check-access>
+	
+	
+	
 	<div class="form-group" >
 	<label><acme:message code="authenticated.job.form.label.employer"/></label>
 	<input readonly="readonly" type="text" class="form-control" value="${employer.userAccount.username}"> 
 	</div>
 		<acme:form-submit code="authenticated.job.form.button.descriptor"
 				  method="get" action="/authenticated/descriptor/show?id=${id}"/>
+				  
+				  
+	<acme:check-access test="${!hasControlCheck}">
+	
+	<acme:form-submit code="authenticated.job.form.button.descriptor"
+				  method="get" action="/authenticated/descriptor/show?id=${id}"/>
+	</acme:check-access>
+		
 	<acme:form-submit code="authenticated.job.form.button.auditorRecord" method="get" action="/authenticated/auditor-record/list?id=${id}"/>
 	<acme:form-return code="authenticated.job.form.button.return"/>
 </acme:form>
