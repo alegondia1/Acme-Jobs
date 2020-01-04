@@ -30,4 +30,8 @@
 		<put-attribute name="body" type="template" value="../worker/application/form-justification.jsp" />
 	</definition>
 	
+	<definition name="worker/ejdos/form" extends="master">
+		<put-attribute name="body" type="template" value="../worker/application/form-ejdos.jsp" />
+	</definition>
+	
 </tiles-definitions>

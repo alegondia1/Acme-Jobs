@@ -142,6 +142,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `ejdos` (
+       `id` integer not null,
+        `version` integer not null,
+        `protec` varchar(255),
+        `respuesta` varchar(255),
+        `xxxx` varchar(255),
+        `application_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `employer` (
        `id` integer not null,
         `version` integer not null,
@@ -337,6 +347,9 @@ create index IDX5wwxv107kvi5si12nh4226lnx on `application` (`moment`, `status`);
 
     alter table `descriptor_duty` 
        add constraint UK_gicb7at1idsamnu3xgj4i91vc unique (`dutys_id`);
+
+    alter table `ejdos` 
+       add constraint UK_f5s2k87084a8we9vndn2urevu unique (`application_id`);
 create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
 create index IDX28ur9xm72oo1df9g14xhnh8h3 on `job` (`status`);
 create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
@@ -428,6 +441,11 @@ create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
        add constraint `FKqitedkrksd2w8qyp1fp5eao9f` 
        foreign key (`descriptor_id`) 
        references `descriptor` (`id`);
+
+    alter table `ejdos` 
+       add constraint `FKhg0qmy6p5x9c5v53jirk2l87m` 
+       foreign key (`application_id`) 
+       references `application` (`id`);
 
     alter table `employer` 
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 

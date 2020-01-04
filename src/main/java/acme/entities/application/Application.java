@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -16,6 +17,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
+import acme.entities.ejdos.Ejdos;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
 import acme.framework.entities.DomainEntity;
@@ -70,4 +72,7 @@ public class Application extends DomainEntity {
 	@ManyToOne(optional = false)
 	private Job					job;
 
+	@Valid
+	@OneToOne(mappedBy = "application")
+	private Ejdos				ejdos;
 }

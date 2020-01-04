@@ -899,6 +899,7 @@
 		<property name="status" value="PENDING"/>
 		<property name="worker" ref="worker1Worker"/>
 		<property name="job" ref="Job01"/>
+		<property name="ejdos" ref="Ejdos01"/>
 	</bean>
 	<bean id="Application02" class="acme.entities.application.Application">
 		<property name="reference" value="EMPA-JOBB:APPB"/>
@@ -919,6 +920,7 @@
 		<property name="status" value="REJECTED"/>
 		<property name="worker" ref="worker1Worker"/>
 		<property name="job" ref="Job02"/>
+		<property name="ejdos" ref="Ejdos02"/>
 	</bean>
 	<bean id="Application04" class="acme.entities.application.Application">
 		<property name="reference" value="EMPA-JOBC:APPB"/>
@@ -956,7 +958,7 @@
 		<property name="qualifications" value="Qualifications7"/>
 		<property name="statements" value="Statements7"/>
 		<property name="moment" value="2019/12/10 10:10"/>
-		<property name="status" value="ACCEPTED"/>
+		<property name="status" value="REJECTED"/>
 		<property name="worker" ref="worker1Worker"/>
 		<property name="job" ref="Job05"/>
 	</bean>
@@ -975,4 +977,21 @@
 		<property name="moreInfo2" value="hola otra ve"/>
 		<property name="job" ref="Job01"/>
 		</bean>
+		
+		<!-- EJDOS -->
+	<bean id="Ejdos01" class="acme.entities.ejdos.Ejdos">
+		<property name="respuesta" value="Hola"/>
+		<property name="xxxx" value="hola otra ve"/>
+		<property name="protec" value="protec"/>
+		<property name="application" ref="Application01"/>
+		</bean>
+		
+		<bean id="Ejdos02" class="acme.entities.ejdos.Ejdos">
+		<property name="respuesta" value="Hola"/>
+		<property name="xxxx" value="hola otra ve"/>
+		<property name="protec" value="protec"/>
+		<property name="application" ref="Application03"/>
+		</bean>
+		
+		
 </beans>

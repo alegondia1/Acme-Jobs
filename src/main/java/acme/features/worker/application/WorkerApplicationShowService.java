@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.application.Application;
+import acme.entities.ejdos.Ejdos;
 import acme.entities.roles.Worker;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -30,6 +31,16 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+
+		Ejdos c = entity.getEjdos();
+		boolean hasControlCheck;
+		if (c == null) {
+			hasControlCheck = false;
+		} else {
+			hasControlCheck = true;
+		}
+
+		model.setAttribute("hasControlCheck", hasControlCheck);
 
 		request.unbind(entity, model, "reference", "skills", "moment");
 		request.unbind(entity, model, "statements", "qualifications", "status", "worker.userAccount.username", "job.title");

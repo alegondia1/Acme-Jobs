@@ -55,6 +55,10 @@
        drop 
        foreign key `FKqitedkrksd2w8qyp1fp5eao9f`;
 
+    alter table `ejdos` 
+       drop 
+       foreign key `FKhg0qmy6p5x9c5v53jirk2l87m`;
+
     alter table `employer` 
        drop 
        foreign key FK_na4dfobmeuxkwf6p75abmb2tr;
@@ -146,6 +150,8 @@
     drop table if exists `descriptor_duty`;
 
     drop table if exists `duty`;
+
+    drop table if exists `ejdos`;
 
     drop table if exists `employer`;
 

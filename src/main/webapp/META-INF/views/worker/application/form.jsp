@@ -22,6 +22,9 @@
 	<acme:form-textbox code="worker.application.form.label.job" readonly="true" path="job.title"/>
 	
 	<acme:form-submit test="${command != 'create' && status == 'REJECTED'}" code="worker.application.form.label.button.justification" method="get" action="/worker/justification/show?id=${id}"/>
+	<acme:check-access test="${!hasControlCheck}">
+	<acme:form-submit test="${command != 'create' && status == 'REJECTED'}" code="worker.application.form.label.button.ejdosrespuesta" method="get" action="/worker/ejdos/create?id=${id}"/>
+	</acme:check-access>
 	<acme:form-submit test="${command == 'create'}" code="worker.application.form.label.button.create" action="/worker/application/create"/>
 	<acme:form-return code="worker.application.form.button.return"/>
 </acme:form>
