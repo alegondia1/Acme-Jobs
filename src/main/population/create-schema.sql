@@ -80,15 +80,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `challenge_test` (
-       `id` integer not null,
-        `version` integer not null,
-        `more_info2` varchar(255),
-        `p_text` varchar(255),
-        `job_id` integer not null,
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `commercial_banner` (
        `id` integer not null,
         `version` integer not null,
@@ -149,6 +140,15 @@
         `respuesta` varchar(255),
         `xxxx` varchar(255),
         `application_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `ejuno` (
+       `id` integer not null,
+        `version` integer not null,
+        `more_info2` varchar(255),
+        `p_text` varchar(255),
+        `job_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -342,14 +342,14 @@ create index IDX5wwxv107kvi5si12nh4226lnx on `application` (`moment`, `status`);
     alter table `application` 
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
 
-    alter table `challenge_test` 
-       add constraint UK_5ilfn1qqsku4lndis0f3bfadc unique (`job_id`);
-
     alter table `descriptor_duty` 
        add constraint UK_gicb7at1idsamnu3xgj4i91vc unique (`dutys_id`);
 
     alter table `ejdos` 
        add constraint UK_f5s2k87084a8we9vndn2urevu unique (`application_id`);
+
+    alter table `ejuno` 
+       add constraint UK_e1684mxo8ti6macwf04cl6i9f unique (`job_id`);
 create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
 create index IDX28ur9xm72oo1df9g14xhnh8h3 on `job` (`status`);
 create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
@@ -412,11 +412,6 @@ create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
-    alter table `challenge_test` 
-       add constraint `FK3nupxtb0v0in3aggts4d33cyi` 
-       foreign key (`job_id`) 
-       references `job` (`id`);
-
     alter table `commercial_banner` 
        add constraint `FKd0k52g7lcacefcp62kb4p9aor` 
        foreign key (`sponsor_id`) 
@@ -446,6 +441,11 @@ create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
        add constraint `FKhg0qmy6p5x9c5v53jirk2l87m` 
        foreign key (`application_id`) 
        references `application` (`id`);
+
+    alter table `ejuno` 
+       add constraint `FKj8o0yhnqo9u4p2a4wla1qjees` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
 
     alter table `employer` 
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 

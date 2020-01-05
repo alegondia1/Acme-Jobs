@@ -31,10 +31,6 @@
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
 
-    alter table `challenge_test` 
-       drop 
-       foreign key `FK3nupxtb0v0in3aggts4d33cyi`;
-
     alter table `commercial_banner` 
        drop 
        foreign key `FKd0k52g7lcacefcp62kb4p9aor`;
@@ -58,6 +54,10 @@
     alter table `ejdos` 
        drop 
        foreign key `FKhg0qmy6p5x9c5v53jirk2l87m`;
+
+    alter table `ejuno` 
+       drop 
+       foreign key `FKj8o0yhnqo9u4p2a4wla1qjees`;
 
     alter table `employer` 
        drop 
@@ -135,8 +135,6 @@
 
     drop table if exists `challenge`;
 
-    drop table if exists `challenge_test`;
-
     drop table if exists `commercial_banner`;
 
     drop table if exists `consumer`;
@@ -152,6 +150,8 @@
     drop table if exists `duty`;
 
     drop table if exists `ejdos`;
+
+    drop table if exists `ejuno`;
 
     drop table if exists `employer`;
 

@@ -19,8 +19,8 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.challengeTest.ChallengeTest;
 import acme.entities.descriptor.Descriptor;
+import acme.entities.ejuno.Ejuno;
 import acme.entities.roles.Employer;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -75,5 +75,5 @@ public class Job extends DomainEntity {
 
 	@Valid
 	@OneToOne(mappedBy = "Job")
-	private ChallengeTest		challengeTest;
+	private Ejuno				ejuno;
 }

@@ -20,6 +20,6 @@ authenticated.job.form.label.reward.error = Reward must be in EUR
 authenticated.job.form.label.deadline.error = Deadline must be in future
 authenticated.job.form.label.accept = Must accept the conditions
 authenticated.job.form.button.descriptor= Descriptor Information
-authenticated.job.form.button.challengeTest= Challenge Information
+
 
 authenticated.job.form.button.create = Create job

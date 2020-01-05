@@ -1,5 +1,5 @@
 
-package acme.entities.challengeTest;
+package acme.entities.ejuno;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -16,7 +16,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class ChallengeTest extends DomainEntity {
+public class Ejuno extends DomainEntity {
 
 	//Serialisation identifier-----------------------------
 

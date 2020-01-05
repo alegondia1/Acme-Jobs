@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.challengeTest;
+package acme.features.worker.Ejuno;
 
 import javax.annotation.PostConstruct;
 
@@ -7,24 +7,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.challengeTest.ChallengeTest;
+import acme.entities.ejuno.Ejuno;
+import acme.entities.roles.Worker;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/authenticated/challengeTest/")
-public class AuthenticatedChallengeTestController extends AbstractController<Authenticated, ChallengeTest> {
+@RequestMapping("/worker/ejuno/")
+public class WorkerEjunoController extends AbstractController<Worker, Ejuno> {
 
 	//Internal State
 	@Autowired
-	AuthenticatedChallengeTestShowService showService;
+	WorkerEjunoCreateService createService;
 
 
 	//Constructors
 	@PostConstruct
 	private void initialise() {
-		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 
 	}
 }
