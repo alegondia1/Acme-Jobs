@@ -317,6 +317,14 @@
 		
 
 </script>
+
+<h2>Test DP</h2>
+	<!-- A -->
+	<acme:form-double code="administrator.dashboard.form.label.ratioOfJobWithChallenge" readonly="true" path="ratioOfJobWithChallenge"/>
+	<!-- B -->
+	<acme:form-double code="administrator.dashboard.form.label.ratioOfChallengeWithXXXX4" readonly="true" path="ratioOfChallengeWithXXXX4"/>
+	<!-- C -->
+	<acme:form-double code="administrator.dashboard.form.label.ratioOfApplicationsWithPassword" readonly="true" path="ratioOfApplicationsWithPassword"/>
 <h2>D05</h2>
 <div>
 	<h2><acme:message code="administrator.dashboard.form.label.pendingApplicationsPerDay"/></h2>
@@ -357,6 +365,8 @@
 	<acme:form-double code="administrator.dashboard.form.label.maxRewardOffer" readonly="true" path="maxRewardOffer"/>
 	<acme:form-double code="administrator.dashboard.form.label.avgRewardOffer" readonly="true" path="avgRewardOffer"/>
 	<acme:form-double code="administrator.dashboard.form.label.desvRewardOffer" readonly="true" path="desvRewardOffer"/>
+	
+	
 		
 </acme:form>
 <div>

@@ -29,6 +29,16 @@ public class Dashboard implements Serializable {
 	private Double					avgRewardOffer;
 	private Double					desvRewardOffer;
 
+	//TEst
+	//A
+	private Double					ratioOfJobWithChallenge;
+
+	//B
+	private Double					ratioOfChallengeWithXXXX4;
+
+	//C
+	private Double					ratioOfApplicationsWithPassword;
+
 	private Map<String, Integer>	investorGroupBySector;
 	private Map<String, Integer>	companyGroupBySector;
 

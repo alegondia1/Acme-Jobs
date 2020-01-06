@@ -20,6 +20,18 @@ administrator.dashboard.form.label.avgRewardOffer = Average reward offer
 administrator.dashboard.form.label.desvRewardOffer = Standard desviation offer
 administrator.dashboard.form.label.desvRewardRequest = Standard desviation request
 
+
+
+
+administrator.dashboard.form.label.ratioOfJobWithChallenge = Ratio of job with ejuno
+administrator.dashboard.form.label.ratioOfChallengeWithXXXX4 = Ratio of challenge with password
+administrator.dashboard.form.label.ratioOfApplicationsWithPassword = Ratio of Applications with password
+
+
+
+
+
+
 administrator.dashboard.form.label.investorGroupBySector = Investor record group by sector
 administrator.dashboard.form.label.companyGroupBySector = Company record group by sector
 

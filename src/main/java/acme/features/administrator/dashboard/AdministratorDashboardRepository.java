@@ -75,4 +75,35 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select count(a) from Application a where a.status='REJECTED' and a.moment BETWEEN ?1 AND ?2")
 	Integer findRejectedAppBetween(Date from, Date to);
+
+	//TEst examen
+	//A
+	@Query("select count(j) from Job j where j.ejuno.id!=null")
+	Integer getTotalJobWithChallenge();
+
+	@Query("select count(j) from Job j")
+	Integer getTotalJob();
+
+	@Query("select 1.0 * count(j) / (select count(a) from Job a) from Job j where j.ejuno.id != null")
+	Double getRatioOfJobWithChallenge();
+
+	//B
+	@Query("select count(j) from Ejuno j where j.password.id!=null")
+	Integer getTotalChallengeWithPassword();
+
+	@Query("select count(j) from Ejuno j")
+	Integer getTotalChallenge();
+
+	@Query("select (1.0*count(j)/(select count(a) from Ejuno a)) from Ejuno j where j.password.id is not null")
+	Double getRatioOfChallengeWithXXXX4();
+
+	//C
+	@Query("select count(a) from Application a")
+	Integer getTotalNumberOfApplications();
+
+	@Query("select count(a) from Application a where a.ejdos.protec!=null")
+	Integer getTotalNumberOfApplicationsWithPassword();
+
+	@Query("select 1.0 * count(p) / (select count(a) from Application a) from Application p where p.ejdos.protec != null")
+	Double getRatioOfApplicationsWithPassword();
 }

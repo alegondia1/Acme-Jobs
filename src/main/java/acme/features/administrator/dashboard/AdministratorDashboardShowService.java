@@ -41,7 +41,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		request.unbind(entity, model, "numberAnnouncement", "numberCompanyRecord", "numberInvestorRecord", "minRewardRequest", "maxRewardRequest", "avgRewardRequest", "desvRewardRequest", "minRewardOffer", "maxRewardOffer", "avgRewardOffer",
 			"desvRewardOffer", "investorGroupBySector", "companyGroupBySector", "avgNumJobsPerEmmployer", "avgNumApplPerEmmployer", "avgNumApplPerWorker", "ratioJobGroupbyStatus", "ratioAppGroupbyStatus", "pendingApplicationsPerDay",
-			"acceptedApplicationsPerDay", "rejectedApplicationsPerDay");
+			"acceptedApplicationsPerDay", "rejectedApplicationsPerDay", "ratioOfJobWithChallenge", "ratioOfChallengeWithXXXX4", "ratioOfApplicationsWithPassword");
 
 	}
 
@@ -61,6 +61,15 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setMaxRewardOffer(this.repository.findMaxRewardOffer());
 		result.setAvgRewardOffer(this.repository.findAvgRewardOffer());
 		result.setDesvRewardOffer(this.repository.findDesvRewardOffer());
+
+		//A
+		result.setRatioOfJobWithChallenge(this.repository.getRatioOfJobWithChallenge());
+
+		//B
+		result.setRatioOfChallengeWithXXXX4(this.repository.getRatioOfChallengeWithXXXX4());
+
+		//C
+		result.setRatioOfApplicationsWithPassword(this.repository.getRatioOfApplicationsWithPassword());
 
 		Map<String, Integer> investorGroupBySector = new HashMap<String, Integer>();
 		Map<String, Integer> companyGroupBySector = new HashMap<String, Integer>();

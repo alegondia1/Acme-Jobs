@@ -20,6 +20,16 @@ administrator.dashboard.form.label.avgRewardOffer = Media de recompensas por ofe
 administrator.dashboard.form.label.desvRewardOffer = Desviacion estandar de las ofertas
 administrator.dashboard.form.label.desvRewardRequest = Desviacion estandar de las peticiones
 
+
+
+
+administrator.dashboard.form.label.ratioOfJobWithChallenge = Ratio de trabajos con desafios
+administrator.dashboard.form.label.ratioOfChallengeWithXXXX4 = Ratio de desafios con contraseña
+administrator.dashboard.form.label.ratioOfApplicationsWithPassword = Ratio de aplicaciones con contraseña
+
+
+
+
 administrator.dashboard.form.label.investorGroupBySector = Registros de inversion agrupados por sector
 administrator.dashboard.form.label.companyGroupBySector = Registros de compañias agrupados por sector
 
