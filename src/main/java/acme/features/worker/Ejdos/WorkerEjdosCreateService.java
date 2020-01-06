@@ -36,7 +36,7 @@ public class WorkerEjdosCreateService implements AbstractCreateService<Worker, E
 		int id;
 		id = request.getModel().getInteger("id");
 
-		request.unbind(entity, model, "respuesta", "xxxx", "protec");
+		request.unbind(entity, model, "respuesta", "protec");
 
 		model.setAttribute("id", id);
 
@@ -75,34 +75,14 @@ public class WorkerEjdosCreateService implements AbstractCreateService<Worker, E
 		assert errors != null;
 		String protec = entity.getProtec();
 
-		errors.state(request, this.have3(protec), "errorvalidate", "worker.ejdos.form.label.notpass");
-	}
+		Application application;
+		int id;
+		id = request.getModel().getInteger("id");
+		application = this.repository.findAppOneById(id);
 
-	private boolean have3(final String str) {
-		if (str == null) {
-			return false;
-		}
-		Integer let = 0;
-		Integer num = 0;
-		Integer sim = 0;
-		char clave;
-		for (int i = 0; i < str.length(); i++) {
-			clave = str.charAt(i);
-			String clav = String.valueOf(clave);
-			if (clav.matches("[A-Z]") || clav.matches("[a-z]")) {
-				let++;
-			} else if (clav.matches("[0-9]")) {
-				num++;
-			} else {
-				sim++;
-			}
+		if (application.getJob().getEjuno().getPassword() != null) {
 
-		}
-
-		if (let >= 3 && num >= 3 && sim >= 3) {
-			return true;
-		} else {
-			return false;
+			errors.state(request, application.getJob().getEjuno().getPassword().getPass().equals(protec), "errorPass", "worker.application.form.label.notPass2");
 		}
 
 	}
@@ -115,7 +95,6 @@ public class WorkerEjdosCreateService implements AbstractCreateService<Worker, E
 
 		int id;
 		id = request.getModel().getInteger("id");
-		System.out.println(id);
 
 		application = this.repository.findAppOneById(id);
 		application.setEjdos(entity);

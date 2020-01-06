@@ -17,4 +17,5 @@ worker.application.form.label.notunique = The reference already exists
 worker.application.form.label.button.create = Apply
 worker.application.form.label.worker = Worker
 worker.application.form.label.job = Job
+worker.application.form.label.notPass2 = Bad pass
 worker.application.form.button.return = Return

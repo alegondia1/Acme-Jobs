@@ -15,6 +15,9 @@
 	<acme:form-textbox code="worker.job.form.label.pText" path="pText"/>
 	<acme:form-textbox code="worker.job.form.label.moreInfo2" path="moreInfo2"/>
 	</acme:check-access>
+	<acme:check-access test="${hasControlCheck2}">
+	<acme:form-textbox code="worker.job.form.label.pass" path="pass"/>
+	</acme:check-access>
 	
 	<div class="form-group" >
 	<label><acme:message code="worker.job.form.label.employer"/></label>
@@ -27,6 +30,11 @@
 	
 	<acme:check-access test="${!hasControlCheck}">
 	<acme:form-submit code="worker.job.form.button.ejuno" method="get" action="/worker/ejuno/create?id=${id}"/>
+	</acme:check-access>
+	<acme:check-access test="${hasControlCheck}">
+	<acme:check-access test="${!hasControlCheck2}">
+	<acme:form-submit code="worker.job.form.button.password" method="get" action="/worker/password/create?id=${id}"/>
+	</acme:check-access>
 	</acme:check-access>
 	
 	<acme:form-return code="worker.job.form.button.return"/>

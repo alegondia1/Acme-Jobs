@@ -138,7 +138,6 @@
         `version` integer not null,
         `protec` varchar(255),
         `respuesta` varchar(255),
-        `xxxx` varchar(255),
         `application_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -243,6 +242,14 @@
         `text` varchar(1024),
         `ticker` varchar(255),
         `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `password` (
+       `id` integer not null,
+        `version` integer not null,
+        `pass` varchar(255),
+        `ejuno_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -365,6 +372,9 @@ create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
 
     alter table `offer` 
        add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
+
+    alter table `password` 
+       add constraint UK_6c4styhwk8dm8062qy20blhv9 unique (`ejuno_id`);
 
     alter table `request` 
        add constraint UK_9mxq3powq8tqctclj0fbi2nih unique (`ticker`);
@@ -491,6 +501,11 @@ create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
        add constraint `FKpcpr0xb5k7s4rxv5pulstt5v9` 
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
+
+    alter table `password` 
+       add constraint `FK9ujaffqmi7vkolofanuxi4isy` 
+       foreign key (`ejuno_id`) 
+       references `ejuno` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 

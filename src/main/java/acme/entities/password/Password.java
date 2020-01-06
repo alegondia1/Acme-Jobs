@@ -1,11 +1,10 @@
 
-package acme.entities.ejdos;
+package acme.entities.password;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.NotBlank;
 
-import acme.entities.application.Application;
+import acme.entities.ejuno.Ejuno;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,16 +13,17 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class Ejdos extends DomainEntity {
+public class Password extends DomainEntity {
+
+	//Serialisation identifier-----------------------------
 
 	private static final long	serialVersionUID	= 1L;
 
-	@NotBlank
-	String						respuesta;
+	//Attributes---------------------------------------
 
-	String						protec;
+	private String				pass;
 
 	@OneToOne(optional = false)
-	private Application			application;
+	private Ejuno				Ejuno;
 
 }

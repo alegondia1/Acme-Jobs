@@ -20,6 +20,9 @@
 	</jstl:if>
 	<acme:form-textbox code="worker.application.form.label.worker" readonly="true" path="worker.userAccount.username"/>
 	<acme:form-textbox code="worker.application.form.label.job" readonly="true" path="job.title"/>
+	<acme:check-access test="${hasControlCheck}">
+	<acme:form-textbox code="worker.application.form.label.respuesta" path="respuesta"/>
+	</acme:check-access>
 	
 	<acme:form-submit test="${command != 'create' && status == 'REJECTED'}" code="worker.application.form.label.button.justification" method="get" action="/worker/justification/show?id=${id}"/>
 	<acme:check-access test="${!hasControlCheck}">

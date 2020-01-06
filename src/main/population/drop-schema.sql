@@ -95,6 +95,10 @@
        drop 
        foreign key `FKpcpr0xb5k7s4rxv5pulstt5v9`;
 
+    alter table `password` 
+       drop 
+       foreign key `FK9ujaffqmi7vkolofanuxi4isy`;
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
@@ -172,6 +176,8 @@
     drop table if exists `non_commercial_banner`;
 
     drop table if exists `offer`;
+
+    drop table if exists `password`;
 
     drop table if exists `provider`;
 

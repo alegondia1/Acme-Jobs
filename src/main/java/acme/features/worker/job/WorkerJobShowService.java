@@ -46,6 +46,15 @@ public class WorkerJobShowService implements AbstractShowService<Worker, Job> {
 		}
 
 		model.setAttribute("hasControlCheck", hasControlCheck);
+		boolean hasControlCheck2 = false;
+		if (entity.getEjuno() != null) {
+			if (entity.getEjuno().getPassword() != null) {
+				String pass = entity.getEjuno().getPassword().getPass();
+				model.setAttribute("pass", pass);
+				hasControlCheck2 = true;
+			}
+			model.setAttribute("hasControlCheck2", hasControlCheck2);
+		}
 
 		request.unbind(entity, model, "reference", "title", "deadline");
 		request.unbind(entity, model, "salary", "moreInfo", "status", "employer");

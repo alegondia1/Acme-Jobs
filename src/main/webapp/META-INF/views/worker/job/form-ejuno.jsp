@@ -4,8 +4,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="worker.job.form.label.ejdos.pText" path="pText"/>
-	<acme:form-textbox code="worker.job.form.label.ejdos.moreInfo2" path="moreInfo2"/>
+	<acme:form-textbox code="worker.job.form.label.ejuno.pText" path="pText"/>
+	<acme:form-textbox code="worker.job.form.label.ejuno.moreInfo2" path="moreInfo2"/>
 
 	
 	

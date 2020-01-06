@@ -5,8 +5,8 @@
 
 <acme:form>
 	<acme:form-textbox code="worker.application.form.label.ejdos.respuesta" path="respuesta"/>
-	<acme:form-textbox code="worker.application.form.label.ejdos.xxxx" path="xxxx"/>
 	<acme:form-textbox code="worker.application.form.label.ejdos.protec" path="protec"/>
+
 
 	
 	

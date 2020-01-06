@@ -32,6 +32,18 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		assert entity != null;
 		assert model != null;
 
+		if (entity.getEjdos() != null) {
+			String respuesta = entity.getEjdos().getRespuesta();
+			model.setAttribute("respuesta", respuesta);
+			if (entity.getEjdos().getProtec() != null) {
+				String protec = entity.getEjdos().getProtec();
+				model.setAttribute("protec", protec);
+			} else {
+				String protec = "No password";
+				model.setAttribute("protec", protec);
+			}
+		}
+
 		Ejdos c = entity.getEjdos();
 		boolean hasControlCheck;
 		if (c == null) {

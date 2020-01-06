@@ -976,22 +976,27 @@
 		<property name="pText" value="Hola"/>
 		<property name="moreInfo2" value="hola otra ve"/>
 		<property name="job" ref="Job01"/>
+		<property name="password" ref="Pass01"/>
 		</bean>
 		
 		<!-- EJDOS -->
 	<bean id="Ejdos01" class="acme.entities.ejdos.Ejdos">
 		<property name="respuesta" value="Hola"/>
-		<property name="xxxx" value="hola otra ve"/>
 		<property name="protec" value="protec"/>
 		<property name="application" ref="Application01"/>
 		</bean>
 		
 		<bean id="Ejdos02" class="acme.entities.ejdos.Ejdos">
 		<property name="respuesta" value="Hola"/>
-		<property name="xxxx" value="hola otra ve"/>
 		<property name="protec" value="protec"/>
 		<property name="application" ref="Application03"/>
 		</bean>
 		
+		
+		<!-- PASSWORD -->
+	<bean id="Pass01" class="acme.entities.password.Password">
+		<property name="pass" value="passdeEjemplo"/>
+		<property name="ejuno" ref="Ejuno01"/>
+		</bean>
 		
 </beans>
