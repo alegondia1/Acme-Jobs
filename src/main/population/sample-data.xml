@@ -995,8 +995,10 @@
 		
 		<!-- PASSWORD -->
 	<bean id="Pass01" class="acme.entities.password.Password">
-		<property name="pass" value="passdeEjemplo"/>
+		<property name="pass" value="i7j9h8..."/>
 		<property name="ejuno" ref="Ejuno01"/>
 		</bean>
+		
+
 		
 </beans>

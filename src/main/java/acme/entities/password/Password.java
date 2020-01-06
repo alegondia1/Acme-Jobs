@@ -20,7 +20,7 @@ public class Password extends DomainEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	//Attributes---------------------------------------
-
+	//@Pattern(regexp = "(^(?=.*[a-zA-Z] {3,})(?=.*[0-9] {3,})(?=.*\\p{P}{2,}).{8,}$)?", message = "The pass must contain atleas 3 letters, 3 digits and 2 symbols")
 	private String				pass;
 
 	@OneToOne(optional = false)

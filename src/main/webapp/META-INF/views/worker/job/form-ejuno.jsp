@@ -10,6 +10,6 @@
 	
 	
 	
-	<acme:form-submit test="${command == 'create'}" code="worker.job.form.button.create" action="/worker/ejuno/create?id=${id}"/>
+	<acme:form-submit test="${command == 'create'}" code="worker.job.form.button.createEjuno" action="/worker/ejuno/create?id=${id}"/>
 	<acme:form-return code="worker.application.form.button.return"/>
 </acme:form>

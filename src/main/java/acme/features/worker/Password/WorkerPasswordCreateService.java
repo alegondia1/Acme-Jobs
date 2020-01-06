@@ -79,8 +79,8 @@ public class WorkerPasswordCreateService implements AbstractCreateService<Worker
 	}
 
 	private boolean have3(final String str) {
-		if (str == null) {
-			return false;
+		if (str == null || str == "") {
+			return true;
 		}
 		Integer let = 0;
 		Integer num = 0;
@@ -99,7 +99,7 @@ public class WorkerPasswordCreateService implements AbstractCreateService<Worker
 
 		}
 
-		if (let >= 3 && num >= 3 && sim >= 3) {
+		if (let >= 3 && num >= 3 && sim >= 2) {
 			return true;
 		} else {
 			return false;

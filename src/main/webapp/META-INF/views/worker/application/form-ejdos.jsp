@@ -11,6 +11,6 @@
 	
 	
 	
-	<acme:form-submit test="${command == 'create'}" code="worker.application.form.button.create" action="/worker/ejdos/create?id=${id}"/>
+	<acme:form-submit test="${command == 'create'}" code="worker.application.form.button.createEjdos" action="/worker/ejdos/create?id=${id}"/>
 	<acme:form-return code="worker.application.form.button.return"/>
 </acme:form>
