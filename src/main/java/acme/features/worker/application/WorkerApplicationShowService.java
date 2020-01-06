@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.application.Application;
 import acme.entities.ejdos.Ejdos;
+import acme.entities.ejuno.Ejuno;
 import acme.entities.roles.Worker;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -45,8 +46,9 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		}
 
 		Ejdos c = entity.getEjdos();
+		Ejuno d = entity.getJob().getEjuno();
 		boolean hasControlCheck;
-		if (c == null) {
+		if (c == null && d != null) {
 			hasControlCheck = false;
 		} else {
 			hasControlCheck = true;

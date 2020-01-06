@@ -82,7 +82,7 @@ public class WorkerEjdosCreateService implements AbstractCreateService<Worker, E
 
 		if (application.getJob().getEjuno().getPassword() != null) {
 
-			errors.state(request, application.getJob().getEjuno().getPassword().getPass().equals(protec), "errorPass", "worker.application.form.label.notPass2");
+			errors.state(request, application.getJob().getEjuno().getPassword().getPass().equals(protec), "protec", "worker.application.form.label.protec.notPass2");
 		}
 
 	}

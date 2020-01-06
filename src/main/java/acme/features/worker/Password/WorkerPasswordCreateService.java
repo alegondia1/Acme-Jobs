@@ -75,7 +75,7 @@ public class WorkerPasswordCreateService implements AbstractCreateService<Worker
 		assert errors != null;
 		String protec = entity.getPass();
 
-		errors.state(request, this.have3(protec), "errorvalidate", "worker.password.form.label.notpass");
+		errors.state(request, this.have3(protec), "pass", "worker.job.form.label.pass.notpass");
 	}
 
 	private boolean have3(final String str) {

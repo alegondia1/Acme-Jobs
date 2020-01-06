@@ -31,3 +31,4 @@ worker.job.form.label.ejuno.pText = Challenge text
 worker.job.form.label.ejuno.moreInfo2 = More info
 worker.job.form.button.createEjuno = Create challenge
 worker.job.form.label.password.pass = Password
+worker.job.form.label.pass.notpass = Bad password
