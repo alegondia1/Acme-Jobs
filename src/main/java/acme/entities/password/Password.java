@@ -21,6 +21,7 @@ public class Password extends DomainEntity {
 
 	//Attributes---------------------------------------
 	//@Pattern(regexp = "(^(?=.*[a-zA-Z] {3,})(?=.*[0-9] {3,})(?=.*\\p{P}{2,}).{8,}$)?", message = "The pass must contain atleas 3 letters, 3 digits and 2 symbols")
+	//@Pattern(regexp = "(^(?=.*\\d{2,})(?=.*\\p{P}{2,})(?=.*[A-z]{2,})\\S{8,}$)?")
 	private String				pass;
 
 	@OneToOne(optional = false)
