@@ -32,6 +32,16 @@ employer.job.form.label.accept = Must accept the conditions
 employer.job.form.button.descriptor= Descriptor Information
 employer.job.form.button.delete = Delete
 employer.job.form.button.update = Update
+employer.job.form.label.pText = Challenge text
+employer.job.form.label.moreInfo2 = More info
+employer.job.form.label.pass = Password
+employer.job.form.button.ejuno = Create challenge
+employer.job.form.button.password = Create challenge password
+employer.job.form.label.ejuno.pText = Challenge text
+employer.job.form.label.ejuno.moreInfo2 = More info
+employer.job.form.button.createEjuno = Create challenge
+employer.job.form.label.password.pass = Password
+employer.job.form.label.pass.notpass = Bad password
 
 employer.job.form.button.auditorRecord = See the auditor records
 employer.job.form.button.create = Create job

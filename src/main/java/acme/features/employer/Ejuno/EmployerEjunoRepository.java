@@ -1,5 +1,5 @@
 
-package acme.features.worker.Ejuno;
+package acme.features.employer.Ejuno;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -9,7 +9,7 @@ import acme.entities.jobs.Job;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface WorkerEjunoRepository extends AbstractRepository {
+public interface EmployerEjunoRepository extends AbstractRepository {
 
 	@Query("select r.ejuno from Job r where r.id=?1")
 	Ejuno findOneByJobId(int id);

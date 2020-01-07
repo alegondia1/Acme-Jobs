@@ -26,4 +26,12 @@
 		<put-attribute name="body" type="template" value="../employer/job/form.jsp" />
 	</definition>
 	
+	<definition name="employer/ejuno/form" extends="master">
+		<put-attribute name="body" type="template" value="../employer/job/form-ejuno.jsp" />
+	</definition>
+	
+	<definition name="employer/password/form" extends="master">
+		<put-attribute name="body" type="template" value="../employer/job/form-password.jsp" />
+	</definition>
+	
 </tiles-definitions>

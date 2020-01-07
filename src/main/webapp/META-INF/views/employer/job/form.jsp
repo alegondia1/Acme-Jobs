@@ -14,6 +14,22 @@
 	<acme:form-checkbox code="employer.job.form.label.status" readonly="true" path="status"/>
 	</jstl:if>
 	<acme:form-textbox code="employer.job.form.label.employer" readonly="true" path="employer.userAccount.username"/>
+		<acme:check-access test="${hasControlCheck}">
+	<acme:form-textbox code="employer.job.form.label.pText" path="pText"/>
+	<acme:form-textbox code="employer.job.form.label.moreInfo2" path="moreInfo2"/>
+	</acme:check-access>
+	<acme:check-access test="${hasControlCheck2}">
+	<acme:form-textbox code="employer.job.form.label.pass" path="pass"/>
+	</acme:check-access>
+	
+	<acme:check-access test="${!hasControlCheck and command == 'show'}">
+	<acme:form-submit code="employer.job.form.button.ejuno" method="get" action="/employer/ejuno/create?id=${id}"/>
+	</acme:check-access>
+	<acme:check-access test="${hasControlCheck}">
+	<acme:check-access test="${!hasControlCheck2}">
+	<acme:form-submit code="employer.job.form.button.password" method="get" action="/employer/password/create?id=${id}"/>
+	</acme:check-access>
+	</acme:check-access>
 
 	<acme:form-submit test="${command != 'create' && status==true && command != 'update' || descriptor != null}" code="employer.job.form.button.descriptor" method="get" action="/employer/descriptor/show?jobid=${id}"/>
 	<acme:form-submit test="${command != 'create' && status==true && command != 'update'}" code="employer.job.form.button.auditorRecord" method="get" action="/authenticated/auditor-record/list?id=${id}"/>
@@ -38,6 +54,23 @@
 	<acme:form-checkbox code="employer.job.form.label.status" path="status"/>
 	</jstl:if>
 	<acme:form-textbox code="employer.job.form.label.employer" readonly="true" path="employer.userAccount.username"/>
+	
+	<acme:check-access test="${hasControlCheck}">
+	<acme:form-textbox code="employer.job.form.label.pText" path="pText"/>
+	<acme:form-textbox code="employer.job.form.label.moreInfo2" path="moreInfo2"/>
+	</acme:check-access>
+	<acme:check-access test="${hasControlCheck2}">
+	<acme:form-textbox code="employer.job.form.label.pass" path="pass"/>
+	</acme:check-access>
+	
+	<acme:check-access test="${!hasControlCheck and command == 'show'}">
+	<acme:form-submit code="employer.job.form.button.ejuno" method="get" action="/employer/ejuno/create?id=${id}"/>
+	</acme:check-access>
+	<acme:check-access test="${hasControlCheck}">
+	<acme:check-access test="${!hasControlCheck2}">
+	<acme:form-submit code="employer.job.form.button.password" method="get" action="/employer/password/create?id=${id}"/>
+	</acme:check-access>
+	</acme:check-access>
 
 	<acme:form-submit test="${command != 'create' && command != 'delete' && descriptor == null && descriptorBoolean==false}" code="employer.job.form.button.descriptor.create" method="get" action="/employer/descriptor/create?jobid=${id}"/>
 	<acme:form-submit test="${command != 'create' && status==true && command != 'update' || descriptor != null  || descriptorBoolean==true}" code="employer.job.form.button.descriptor" method="get" action="/employer/descriptor/show?jobid=${id}"/>
@@ -49,6 +82,7 @@
 	<acme:form-submit test="${command == 'create'}" code="employer.job.form.button.create" action="/employer/job/create"/>
 	<acme:form-submit test="${command == 'update'}" code="employer.job.form.button.update" action="/employer/job/update"/>
 	<acme:form-submit test="${command == 'delete'}" code="employer.job.form.button.delete" action="/employer/job/delete"/>
+	
 	<acme:form-return code="employer.job.form.button.return"/>
 </acme:form>
 </jstl:if>

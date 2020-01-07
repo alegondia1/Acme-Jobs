@@ -1,23 +1,23 @@
 
-package acme.features.worker.Ejuno;
+package acme.features.employer.Ejuno;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.ejuno.Ejuno;
 import acme.entities.jobs.Job;
-import acme.entities.roles.Worker;
+import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class WorkerEjunoCreateService implements AbstractCreateService<Worker, Ejuno> {
+public class EmployerEjunoCreateService implements AbstractCreateService<Employer, Ejuno> {
 
 	//Internal State -----------------------------
 	@Autowired
-	WorkerEjunoRepository repository;
+	EmployerEjunoRepository repository;
 
 
 	@Override

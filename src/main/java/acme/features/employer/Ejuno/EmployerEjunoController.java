@@ -1,5 +1,5 @@
 
-package acme.features.worker.Ejuno;
+package acme.features.employer.Ejuno;
 
 import javax.annotation.PostConstruct;
 
@@ -8,17 +8,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.ejuno.Ejuno;
-import acme.entities.roles.Worker;
+import acme.entities.roles.Employer;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/worker/ejuno/")
-public class WorkerEjunoController extends AbstractController<Worker, Ejuno> {
+@RequestMapping("/employer/ejuno/")
+public class EmployerEjunoController extends AbstractController<Employer, Ejuno> {
 
 	//Internal State
 	@Autowired
-	WorkerEjunoCreateService createService;
+	EmployerEjunoCreateService createService;
 
 
 	//Constructors

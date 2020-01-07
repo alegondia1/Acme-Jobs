@@ -1,23 +1,23 @@
 
-package acme.features.worker.Password;
+package acme.features.employer.Password;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.ejuno.Ejuno;
 import acme.entities.password.Password;
-import acme.entities.roles.Worker;
+import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class WorkerPasswordCreateService implements AbstractCreateService<Worker, Password> {
+public class EmployerPasswordCreateService implements AbstractCreateService<Employer, Password> {
 
 	//Internal State -----------------------------
 	@Autowired
-	WorkerPasswordRepository repository;
+	EmployerPasswordRepository repository;
 
 
 	@Override
@@ -75,7 +75,7 @@ public class WorkerPasswordCreateService implements AbstractCreateService<Worker
 		assert errors != null;
 		String protec = entity.getPass();
 
-		errors.state(request, this.have3(protec), "pass", "worker.job.form.label.pass.notpass");
+		errors.state(request, this.have3(protec), "pass", "employer.job.form.label.pass.notpass");
 	}
 
 	private boolean have3(final String str) {

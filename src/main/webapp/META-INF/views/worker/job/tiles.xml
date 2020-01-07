@@ -26,12 +26,6 @@
 		<put-attribute name="body" type="template" value="../worker/job/form.jsp" />
 	</definition>
 	
-	<definition name="worker/ejuno/form" extends="master">
-		<put-attribute name="body" type="template" value="../worker/job/form-ejuno.jsp" />
-	</definition>
 	
-	<definition name="worker/password/form" extends="master">
-		<put-attribute name="body" type="template" value="../worker/job/form-password.jsp" />
-	</definition>
 	
 </tiles-definitions>
