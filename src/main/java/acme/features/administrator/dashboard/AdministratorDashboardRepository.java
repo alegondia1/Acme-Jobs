@@ -78,32 +78,32 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	//TEst examen
 	//A
-	@Query("select count(j) from Job j where j.ejuno.id!=null")
-	Integer getTotalJobWithChallenge();
+	@Query("select count(j) from Job j where j.nust.id!=null")
+	Integer getTotalJobWithNust();
 
 	@Query("select count(j) from Job j")
 	Integer getTotalJob();
 
-	@Query("select 1.0 * count(j) / (select count(a) from Job a) from Job j where j.ejuno.id != null")
+	@Query("select 1.0 * count(j) / (select count(a) from Job a) from Job j where j.nust.id != null")
 	Double getRatioOfJobWithChallenge();
 
 	//B
-	@Query("select count(j) from Ejuno j where j.password.id!=null")
-	Integer getTotalChallengeWithPassword();
+	@Query("select count(j) from Nust j where j.keylet.id is not null")
+	Integer getRatioOfChallengeWithXXsXX4();
 
-	@Query("select count(j) from Ejuno j")
-	Integer getTotalChallenge();
+	@Query("select count(j) from Nust j")
+	Integer getTotalNust();
 
-	@Query("select (1.0*count(j)/(select count(a) from Ejuno a)) from Ejuno j where j.password.id is not null")
+	@Query("select (1.0*count(j)/(select count(a) from Nust a)) from Nust j where j.keylet.id is not null")
 	Double getRatioOfChallengeWithXXXX4();
 
 	//C
 	@Query("select count(a) from Application a")
 	Integer getTotalNumberOfApplications();
 
-	@Query("select count(a) from Application a where a.ejdos.protec!=null")
+	@Query("select count(a) from Application a where a.answer.keylet!=null")
 	Integer getTotalNumberOfApplicationsWithPassword();
 
-	@Query("select 1.0 * count(p) / (select count(a) from Application a) from Application p where p.ejdos.protec != null")
+	@Query("select 1.0 * count(p) / (select count(a) from Application a) from Application p where p.answer.keylet != null")
 	Double getRatioOfApplicationsWithPassword();
 }

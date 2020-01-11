@@ -4,7 +4,7 @@ package acme.features.employer.Password;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.ejuno.Ejuno;
+import acme.entities.nust.Nust;
 import acme.entities.password.Password;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
@@ -55,15 +55,15 @@ public class EmployerPasswordCreateService implements AbstractCreateService<Empl
 	public Password instantiate(final Request<Password> request) {
 		assert request != null;
 		Password result = new Password();
-		Ejuno ejuno;
+		Nust nust;
 
 		int id;
 		id = request.getModel().getInteger("id");
 
-		ejuno = this.repository.findEjunoByJobId(id);
+		nust = this.repository.findNustByJobId(id);
 
 		//		result.setRespuesta("Respuesta");
-		result.setEjuno(ejuno);
+		result.setNust(nust);
 
 		return result;
 	}
@@ -79,7 +79,7 @@ public class EmployerPasswordCreateService implements AbstractCreateService<Empl
 	}
 
 	private boolean have3(final String str) {
-		if (str == null || str == "") {
+		if (str == null) {
 			return true;
 		}
 		Integer let = 0;
@@ -99,7 +99,7 @@ public class EmployerPasswordCreateService implements AbstractCreateService<Empl
 
 		}
 
-		if (let >= 3 && num >= 3 && sim >= 2) {
+		if (let >= 1 && num >= 1 && sim >= 1 && str.length() >= 10) {
 			return true;
 		} else {
 			return false;
@@ -111,12 +111,12 @@ public class EmployerPasswordCreateService implements AbstractCreateService<Empl
 	public void create(final Request<Password> request, final Password entity) {
 		assert request != null;
 		assert entity != null;
-		Ejuno ejuno;
+		Nust ejuno;
 
 		int id;
 		id = request.getModel().getInteger("id");
 
-		ejuno = this.repository.findEjunoByJobId(id);
+		ejuno = this.repository.findNustByJobId(id);
 		ejuno.setPassword(entity);
 
 		this.repository.save(ejuno);

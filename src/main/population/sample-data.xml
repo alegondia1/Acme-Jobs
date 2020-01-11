@@ -692,7 +692,7 @@
 		<property name="salary" value="EUR 501.2"/>
 		<property name="employer" ref="employer1Employer"/>
 		<property name="descriptor" ref="Descriptor01"/>
-		<property name="ejuno" ref="Ejuno01"/>
+		<property name="nust" ref="Nust01"/>
 	</bean>
 	<bean id="Job02" class="acme.entities.jobs.Job">
 		<property name="title" value="Titulo02"/>
@@ -899,7 +899,7 @@
 		<property name="status" value="PENDING"/>
 		<property name="worker" ref="worker1Worker"/>
 		<property name="job" ref="Job01"/>
-		<property name="ejdos" ref="Ejdos01"/>
+		<property name="answer" ref="Answer01"/>
 	</bean>
 	<bean id="Application02" class="acme.entities.application.Application">
 		<property name="reference" value="EMPA-JOBB:APPB"/>
@@ -920,7 +920,7 @@
 		<property name="status" value="REJECTED"/>
 		<property name="worker" ref="worker1Worker"/>
 		<property name="job" ref="Job02"/>
-		<property name="ejdos" ref="Ejdos02"/>
+		<property name="answer" ref="Answer02"/>
 	</bean>
 	<bean id="Application04" class="acme.entities.application.Application">
 		<property name="reference" value="EMPA-JOBC:APPB"/>
@@ -971,24 +971,24 @@
 		<property name="reason" value="No me gusta esta peticion 2"/>
 		<property name="application" ref="Application06"/>
 	</bean>
-	<!-- EJUNO -->
-	<bean id="Ejuno01" class="acme.entities.ejuno.Ejuno">
+	<!-- NUST -->
+	<bean id="Nust01" class="acme.entities.nust.Nust">
 		<property name="pText" value="Hola"/>
-		<property name="moreInfo2" value="hola otra ve"/>
+		<property name="keylet" value="http:/algo.com"/>
 		<property name="job" ref="Job01"/>
 		<property name="password" ref="Pass01"/>
 		</bean>
 		
-		<!-- EJDOS -->
-	<bean id="Ejdos01" class="acme.entities.ejdos.Ejdos">
+		<!-- ANSWER -->
+	<bean id="Answer01" class="acme.entities.answer.Answer">
 		<property name="respuesta" value="Hola"/>
-		<property name="protec" value="protec"/>
+		<property name="keylet" value="i7j9h8..."/>
 		<property name="application" ref="Application01"/>
 		</bean>
 		
-		<bean id="Ejdos02" class="acme.entities.ejdos.Ejdos">
+		<bean id="Answer02" class="acme.entities.answer.Answer">
 		<property name="respuesta" value="Hola"/>
-		<property name="protec" value="protec"/>
+		<property name="keylet" value="i7j9h8..."/>
 		<property name="application" ref="Application03"/>
 		</bean>
 		
@@ -996,7 +996,7 @@
 		<!-- PASSWORD -->
 	<bean id="Pass01" class="acme.entities.password.Password">
 		<property name="pass" value="i7j9h8..."/>
-		<property name="ejuno" ref="Ejuno01"/>
+		<property name="nust" ref="Nust01"/>
 		</bean>
 		
 		

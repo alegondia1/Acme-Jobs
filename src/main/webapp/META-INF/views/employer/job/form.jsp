@@ -16,14 +16,14 @@
 	<acme:form-textbox code="employer.job.form.label.employer" readonly="true" path="employer.userAccount.username"/>
 		<acme:check-access test="${hasControlCheck}">
 	<acme:form-textbox code="employer.job.form.label.pText" path="pText"/>
-	<acme:form-textbox code="employer.job.form.label.moreInfo2" path="moreInfo2"/>
+	<acme:form-textbox code="employer.job.form.label.keylet" path="keylet"/>
 	</acme:check-access>
 	<acme:check-access test="${hasControlCheck2}">
-	<acme:form-textbox code="employer.job.form.label.pass" path="pass"/>
+	<acme:form-password code="employer.job.form.label.pass" path="pass"/>
 	</acme:check-access>
 	
 	<acme:check-access test="${!hasControlCheck and command == 'show'}">
-	<acme:form-submit code="employer.job.form.button.ejuno" method="get" action="/employer/ejuno/create?id=${id}"/>
+	<acme:form-submit code="employer.job.form.button.nust" method="get" action="/employer/nust/create?id=${id}"/>
 	</acme:check-access>
 	<acme:check-access test="${hasControlCheck}">
 	<acme:check-access test="${!hasControlCheck2}">
@@ -57,14 +57,14 @@
 	
 	<acme:check-access test="${hasControlCheck}">
 	<acme:form-textbox code="employer.job.form.label.pText" path="pText"/>
-	<acme:form-textbox code="employer.job.form.label.moreInfo2" path="moreInfo2"/>
+	<acme:form-textbox code="employer.job.form.label.keylet" path="keylet"/>
 	</acme:check-access>
 	<acme:check-access test="${hasControlCheck2}">
 	<acme:form-textbox code="employer.job.form.label.pass" path="pass"/>
 	</acme:check-access>
 	
 	<acme:check-access test="${!hasControlCheck and command == 'show'}">
-	<acme:form-submit code="employer.job.form.button.ejuno" method="get" action="/employer/ejuno/create?id=${id}"/>
+	<acme:form-submit code="employer.job.form.button.nust" method="get" action="/employer/nust/create?id=${id}"/>
 	</acme:check-access>
 	<acme:check-access test="${hasControlCheck}">
 	<acme:check-access test="${!hasControlCheck2}">

@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
-import acme.entities.ejdos.Ejdos;
+import acme.entities.answer.Answer;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
 import acme.framework.entities.DomainEntity;
@@ -74,5 +74,5 @@ public class Application extends DomainEntity {
 
 	@Valid
 	@OneToOne(mappedBy = "application")
-	private Ejdos				ejdos;
+	private Answer				answer;
 }

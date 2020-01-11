@@ -1,11 +1,11 @@
 
-package acme.features.worker.Ejdos;
+package acme.features.worker.Answer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.answer.Answer;
 import acme.entities.application.Application;
-import acme.entities.ejdos.Ejdos;
 import acme.entities.roles.Worker;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -13,22 +13,22 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class WorkerEjdosCreateService implements AbstractCreateService<Worker, Ejdos> {
+public class WorkerAnswerCreateService implements AbstractCreateService<Worker, Answer> {
 
 	//Internal State -----------------------------
 	@Autowired
-	WorkerEjdosRepository repository;
+	WorkerAnswerRepository repository;
 
 
 	@Override
-	public boolean authorise(final Request<Ejdos> request) {
+	public boolean authorise(final Request<Answer> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<Ejdos> request, final Ejdos entity, final Model model) {
+	public void unbind(final Request<Answer> request, final Answer entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -36,14 +36,14 @@ public class WorkerEjdosCreateService implements AbstractCreateService<Worker, E
 		int id;
 		id = request.getModel().getInteger("id");
 
-		request.unbind(entity, model, "respuesta", "protec");
+		request.unbind(entity, model, "respuesta", "keylet");
 
 		model.setAttribute("id", id);
 
 	}
 
 	@Override
-	public void bind(final Request<Ejdos> request, final Ejdos entity, final Errors errors) {
+	public void bind(final Request<Answer> request, final Answer entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -52,9 +52,9 @@ public class WorkerEjdosCreateService implements AbstractCreateService<Worker, E
 	}
 
 	@Override
-	public Ejdos instantiate(final Request<Ejdos> request) {
+	public Answer instantiate(final Request<Answer> request) {
 		assert request != null;
-		Ejdos result = new Ejdos();
+		Answer result = new Answer();
 		Application application;
 
 		int id;
@@ -62,33 +62,32 @@ public class WorkerEjdosCreateService implements AbstractCreateService<Worker, E
 
 		application = this.repository.findAppOneById(id);
 
-		//		result.setRespuesta("Respuesta");
 		result.setApplication(application);
 
 		return result;
 	}
 
 	@Override
-	public void validate(final Request<Ejdos> request, final Ejdos entity, final Errors errors) {
+	public void validate(final Request<Answer> request, final Answer entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		String protec = entity.getProtec();
+		String keylet = entity.getKeylet();
 
 		Application application;
 		int id;
 		id = request.getModel().getInteger("id");
 		application = this.repository.findAppOneById(id);
 
-		if (application.getJob().getEjuno().getPassword() != null) {
+		if (application.getJob().getNust().getPassword() != null) {
 
-			errors.state(request, application.getJob().getEjuno().getPassword().getPass().equals(protec), "protec", "worker.application.form.label.protec.notPass2");
+			errors.state(request, application.getJob().getNust().getPassword().getPass().equals(keylet), "keylet", "worker.application.form.label.protec.notPass2");
 		}
 
 	}
 
 	@Override
-	public void create(final Request<Ejdos> request, final Ejdos entity) {
+	public void create(final Request<Answer> request, final Answer entity) {
 		assert request != null;
 		assert entity != null;
 		Application application;
@@ -97,7 +96,7 @@ public class WorkerEjdosCreateService implements AbstractCreateService<Worker, E
 		id = request.getModel().getInteger("id");
 
 		application = this.repository.findAppOneById(id);
-		application.setEjdos(entity);
+		application.setAnswer(entity);
 
 		this.repository.save(application);
 		this.repository.save(entity);

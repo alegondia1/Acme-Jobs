@@ -1,11 +1,11 @@
 
-package acme.features.employer.Ejuno;
+package acme.features.employer.Nust;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.ejuno.Ejuno;
 import acme.entities.jobs.Job;
+import acme.entities.nust.Nust;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -13,22 +13,22 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class EmployerEjunoCreateService implements AbstractCreateService<Employer, Ejuno> {
+public class EmployerNustCreateService implements AbstractCreateService<Employer, Nust> {
 
 	//Internal State -----------------------------
 	@Autowired
-	EmployerEjunoRepository repository;
+	EmployerNustRepository repository;
 
 
 	@Override
-	public boolean authorise(final Request<Ejuno> request) {
+	public boolean authorise(final Request<Nust> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<Ejuno> request, final Ejuno entity, final Model model) {
+	public void unbind(final Request<Nust> request, final Nust entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -36,14 +36,14 @@ public class EmployerEjunoCreateService implements AbstractCreateService<Employe
 		int id;
 		id = request.getModel().getInteger("id");
 
-		request.unbind(entity, model, "pText", "moreInfo2");
+		request.unbind(entity, model, "pText", "keylet");
 
 		model.setAttribute("id", id);
 
 	}
 
 	@Override
-	public void bind(final Request<Ejuno> request, final Ejuno entity, final Errors errors) {
+	public void bind(final Request<Nust> request, final Nust entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -52,9 +52,9 @@ public class EmployerEjunoCreateService implements AbstractCreateService<Employe
 	}
 
 	@Override
-	public Ejuno instantiate(final Request<Ejuno> request) {
+	public Nust instantiate(final Request<Nust> request) {
 		assert request != null;
-		Ejuno result = new Ejuno();
+		Nust result = new Nust();
 		Job job;
 
 		int id;
@@ -69,14 +69,14 @@ public class EmployerEjunoCreateService implements AbstractCreateService<Employe
 	}
 
 	@Override
-	public void validate(final Request<Ejuno> request, final Ejuno entity, final Errors errors) {
+	public void validate(final Request<Nust> request, final Nust entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 	}
 
 	@Override
-	public void create(final Request<Ejuno> request, final Ejuno entity) {
+	public void create(final Request<Nust> request, final Nust entity) {
 		assert request != null;
 		assert entity != null;
 		Job job;
@@ -85,7 +85,11 @@ public class EmployerEjunoCreateService implements AbstractCreateService<Employe
 		id = request.getModel().getInteger("id");
 
 		job = this.repository.findJobOneById(id);
-		job.setEjuno(entity);
+
+		if (entity.getKeylet() == "") {
+			entity.setKeylet(null);
+		}
+		job.setNust(entity);
 
 		this.repository.save(job);
 		this.repository.save(entity);

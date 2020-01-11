@@ -7,6 +7,10 @@
        drop 
        foreign key FK_6lnbc6fo3om54vugoh8icg78m;
 
+    alter table `answer` 
+       drop 
+       foreign key `FKqiviwk3b1rfidhy9cajsblq37`;
+
     alter table `application` 
        drop 
        foreign key `FKoa6p4s2oyy7tf80xwc4r04vh6`;
@@ -51,14 +55,6 @@
        drop 
        foreign key `FKqitedkrksd2w8qyp1fp5eao9f`;
 
-    alter table `ejdos` 
-       drop 
-       foreign key `FKhg0qmy6p5x9c5v53jirk2l87m`;
-
-    alter table `ejuno` 
-       drop 
-       foreign key `FKj8o0yhnqo9u4p2a4wla1qjees`;
-
     alter table `employer` 
        drop 
        foreign key FK_na4dfobmeuxkwf6p75abmb2tr;
@@ -95,9 +91,13 @@
        drop 
        foreign key `FKpcpr0xb5k7s4rxv5pulstt5v9`;
 
+    alter table `nust` 
+       drop 
+       foreign key `FKoks9ba769iuq25ubkqn8jg8gn`;
+
     alter table `password` 
        drop 
-       foreign key `FK9ujaffqmi7vkolofanuxi4isy`;
+       foreign key `FK43bm86a1g4hqom3d547g7wjur`;
 
     alter table `provider` 
        drop 
@@ -129,6 +129,8 @@
 
     drop table if exists `anonymous`;
 
+    drop table if exists `answer`;
+
     drop table if exists `application`;
 
     drop table if exists `auditor`;
@@ -153,10 +155,6 @@
 
     drop table if exists `duty`;
 
-    drop table if exists `ejdos`;
-
-    drop table if exists `ejuno`;
-
     drop table if exists `employer`;
 
     drop table if exists `investor_record`;
@@ -174,6 +172,8 @@
     drop table if exists `message_tags`;
 
     drop table if exists `non_commercial_banner`;
+
+    drop table if exists `nust`;
 
     drop table if exists `offer`;
 

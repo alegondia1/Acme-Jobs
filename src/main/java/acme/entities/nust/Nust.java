@@ -1,5 +1,5 @@
 
-package acme.entities.ejuno;
+package acme.entities.nust;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.entities.jobs.Job;
 import acme.entities.password.Password;
@@ -18,7 +19,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class Ejuno extends DomainEntity {
+public class Nust extends DomainEntity {
 
 	//Serialisation identifier-----------------------------
 
@@ -27,16 +28,16 @@ public class Ejuno extends DomainEntity {
 	//Attributes---------------------------------------
 
 	@NotBlank
-	@Length(min = 1, max = 10)
+	@Length(max = 256)
 	private String				pText;
-
-	private String				moreInfo2;
+	@URL
+	private String				keylet;
 
 	@OneToOne(optional = false)
 	private Job					Job;
 
 	@Valid
-	@OneToOne(mappedBy = "Ejuno")
+	@OneToOne(mappedBy = "Nust")
 	private Password			password;
 
 }

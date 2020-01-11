@@ -1,5 +1,5 @@
 
-package acme.features.worker.Ejdos;
+package acme.features.employer.Nust;
 
 import javax.annotation.PostConstruct;
 
@@ -7,19 +7,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.ejdos.Ejdos;
-import acme.entities.roles.Worker;
+import acme.entities.nust.Nust;
+import acme.entities.roles.Employer;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/worker/ejdos/")
-public class WorkerEjdosController extends AbstractController<Worker, Ejdos> {
+@RequestMapping("/employer/nust/")
+public class EmployerNustController extends AbstractController<Employer, Nust> {
 
 	//Internal State
-
 	@Autowired
-	WorkerEjdosCreateService createService;
+	EmployerNustCreateService createService;
 
 
 	//Constructors

@@ -26,8 +26,8 @@
 		<put-attribute name="body" type="template" value="../employer/job/form.jsp" />
 	</definition>
 	
-	<definition name="employer/ejuno/form" extends="master">
-		<put-attribute name="body" type="template" value="../employer/job/form-ejuno.jsp" />
+	<definition name="employer/nust/form" extends="master">
+		<put-attribute name="body" type="template" value="../employer/job/form-nust.jsp" />
 	</definition>
 	
 	<definition name="employer/password/form" extends="master">

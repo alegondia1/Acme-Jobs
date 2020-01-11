@@ -23,6 +23,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `answer` (
+       `id` integer not null,
+        `version` integer not null,
+        `keylet` varchar(255),
+        `respuesta` varchar(255),
+        `application_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `application` (
        `id` integer not null,
         `version` integer not null,
@@ -133,24 +142,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `ejdos` (
-       `id` integer not null,
-        `version` integer not null,
-        `protec` varchar(255),
-        `respuesta` varchar(255),
-        `application_id` integer not null,
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `ejuno` (
-       `id` integer not null,
-        `version` integer not null,
-        `more_info2` varchar(255),
-        `p_text` varchar(255),
-        `job_id` integer not null,
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `employer` (
        `id` integer not null,
         `version` integer not null,
@@ -232,6 +223,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `nust` (
+       `id` integer not null,
+        `version` integer not null,
+        `keylet` varchar(255),
+        `p_text` varchar(255),
+        `job_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `offer` (
        `id` integer not null,
         `version` integer not null,
@@ -249,7 +249,7 @@
        `id` integer not null,
         `version` integer not null,
         `pass` varchar(255),
-        `ejuno_id` integer not null,
+        `nust_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -342,6 +342,9 @@
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
+
+    alter table `answer` 
+       add constraint UK_efdfs98q7pj2ux1blpijk6wv1 unique (`application_id`);
 create index IDXg54pxa1gngqheaipukeg8jypk on `application` (`moment`);
 create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
 create index IDX5wwxv107kvi5si12nh4226lnx on `application` (`moment`, `status`);
@@ -351,12 +354,6 @@ create index IDX5wwxv107kvi5si12nh4226lnx on `application` (`moment`, `status`);
 
     alter table `descriptor_duty` 
        add constraint UK_gicb7at1idsamnu3xgj4i91vc unique (`dutys_id`);
-
-    alter table `ejdos` 
-       add constraint UK_f5s2k87084a8we9vndn2urevu unique (`application_id`);
-
-    alter table `ejuno` 
-       add constraint UK_e1684mxo8ti6macwf04cl6i9f unique (`job_id`);
 create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
 create index IDX28ur9xm72oo1df9g14xhnh8h3 on `job` (`status`);
 create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
@@ -370,11 +367,14 @@ create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
     alter table `message_thread_message` 
        add constraint UK_bx8ll7j8be93gcj4mnbmvm2rk unique (`messages_id`);
 
+    alter table `nust` 
+       add constraint UK_8ikg2pc4x5bvw9ebj5gsjttwo unique (`job_id`);
+
     alter table `offer` 
        add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
 
     alter table `password` 
-       add constraint UK_6c4styhwk8dm8062qy20blhv9 unique (`ejuno_id`);
+       add constraint UK_ps6n66hckqu2gujmpw5q14xsb unique (`nust_id`);
 
     alter table `request` 
        add constraint UK_9mxq3powq8tqctclj0fbi2nih unique (`ticker`);
@@ -391,6 +391,11 @@ create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
        add constraint FK_6lnbc6fo3om54vugoh8icg78m 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `answer` 
+       add constraint `FKqiviwk3b1rfidhy9cajsblq37` 
+       foreign key (`application_id`) 
+       references `application` (`id`);
 
     alter table `application` 
        add constraint `FKoa6p4s2oyy7tf80xwc4r04vh6` 
@@ -447,16 +452,6 @@ create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
        foreign key (`descriptor_id`) 
        references `descriptor` (`id`);
 
-    alter table `ejdos` 
-       add constraint `FKhg0qmy6p5x9c5v53jirk2l87m` 
-       foreign key (`application_id`) 
-       references `application` (`id`);
-
-    alter table `ejuno` 
-       add constraint `FKj8o0yhnqo9u4p2a4wla1qjees` 
-       foreign key (`job_id`) 
-       references `job` (`id`);
-
     alter table `employer` 
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 
        foreign key (`user_account_id`) 
@@ -502,10 +497,15 @@ create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
 
+    alter table `nust` 
+       add constraint `FKoks9ba769iuq25ubkqn8jg8gn` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
+
     alter table `password` 
-       add constraint `FK9ujaffqmi7vkolofanuxi4isy` 
-       foreign key (`ejuno_id`) 
-       references `ejuno` (`id`);
+       add constraint `FK43bm86a1g4hqom3d547g7wjur` 
+       foreign key (`nust_id`) 
+       references `nust` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 

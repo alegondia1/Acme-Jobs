@@ -4,9 +4,9 @@ package acme.features.worker.application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.answer.Answer;
 import acme.entities.application.Application;
-import acme.entities.ejdos.Ejdos;
-import acme.entities.ejuno.Ejuno;
+import acme.entities.nust.Nust;
 import acme.entities.roles.Worker;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -33,20 +33,20 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		assert entity != null;
 		assert model != null;
 
-		if (entity.getEjdos() != null) {
-			String respuesta = entity.getEjdos().getRespuesta();
+		if (entity.getAnswer() != null) {
+			String respuesta = entity.getAnswer().getRespuesta();
 			model.setAttribute("respuesta", respuesta);
-			if (entity.getEjdos().getProtec() != null) {
-				String protec = entity.getEjdos().getProtec();
-				model.setAttribute("protec", protec);
+			if (entity.getAnswer().getKeylet() != null) {
+				String keylet = entity.getAnswer().getKeylet();
+				model.setAttribute("keylet", keylet);
 			} else {
-				String protec = "No password";
-				model.setAttribute("protec", protec);
+				String keylet = "No password";
+				model.setAttribute("keylet", keylet);
 			}
 		}
 
-		Ejdos c = entity.getEjdos();
-		Ejuno d = entity.getJob().getEjuno();
+		Answer c = entity.getAnswer();
+		Nust d = entity.getJob().getNust();
 		boolean hasControlCheck;
 		if (c == null && d != null) {
 			hasControlCheck = false;

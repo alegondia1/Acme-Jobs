@@ -4,8 +4,8 @@ package acme.features.employer.job;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.ejuno.Ejuno;
 import acme.entities.jobs.Job;
+import acme.entities.nust.Nust;
 import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -48,13 +48,13 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		} else {
 			model.setAttribute("descriptorBoolean", false);
 		}
-		if (entity.getEjuno() != null) {
-			String pText = entity.getEjuno().getPText();
+		if (entity.getNust() != null) {
+			String pText = entity.getNust().getPText();
 			model.setAttribute("pText", pText);
-			String moreInfo2 = entity.getEjuno().getMoreInfo2();
-			model.setAttribute("moreInfo2", moreInfo2);
+			String keylet = entity.getNust().getKeylet();
+			model.setAttribute("keylet", keylet);
 		}
-		Ejuno c = entity.getEjuno();
+		Nust c = entity.getNust();
 		boolean hasControlCheck;
 		if (c == null) {
 			hasControlCheck = false;
@@ -64,10 +64,10 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 
 		model.setAttribute("hasControlCheck", hasControlCheck);
 		boolean hasControlCheck2 = false;
-		if (entity.getEjuno() != null) {
-			if (entity.getEjuno().getPassword() != null) {
-				String pass = entity.getEjuno().getPassword().getPass();
-				model.setAttribute("pass", pass);
+		if (entity.getNust() != null) {
+			if (entity.getNust().getPassword() != null) {
+
+				model.setAttribute("pass", "[MASKED-PROTECTED]");
 				hasControlCheck2 = true;
 			}
 			model.setAttribute("hasControlCheck2", hasControlCheck2);

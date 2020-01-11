@@ -78,11 +78,11 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert request != null;
 		assert entity != null;
 
-		if (entity.getEjuno() != null) {
-			if (entity.getEjuno().getPassword() != null) {
-				this.repository.delete(entity.getEjuno().getPassword());
+		if (entity.getNust() != null) {
+			if (entity.getNust().getPassword() != null) {
+				this.repository.delete(entity.getNust().getPassword());
 			}
-			this.repository.delete(entity.getEjuno());
+			this.repository.delete(entity.getNust());
 		}
 
 		this.repository.delete(entity);

@@ -1021,10 +1021,10 @@ m2=1
       <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Ejuno
+Nust
 --
-+ pText : String {NotBlank,Length(5, 60)}
-+ moreInfo2 : String</panel_attributes>
++ pText : String {NotBlank,Length(1,256)}
++ keylet : String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -1050,10 +1050,10 @@ m2=1
       <h>63</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Ejdos
+Answer
 --
 + Respuesta : String {NotBlank}
-+ Protec : String
++ keylet : String
 </panel_attributes>
     <additional_attributes/>
   </element>

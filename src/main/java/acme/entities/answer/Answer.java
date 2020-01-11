@@ -1,5 +1,5 @@
 
-package acme.entities.ejdos;
+package acme.entities.answer;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -14,14 +14,14 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class Ejdos extends DomainEntity {
+public class Answer extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
 	String						respuesta;
 
-	String						protec;
+	String						keylet;
 
 	@OneToOne(optional = false)
 	private Application			application;
